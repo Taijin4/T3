@@ -12,9 +12,3 @@ func _ready():
 	exportation.init(12439,75734,890,"EXPORTATION")
 	local_need.init(1830,2821,93,"BESOIN LOCAUX")
 	local_production.init(0,0,100000,"PRODUCTION LOCALE")
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

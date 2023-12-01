@@ -6,52 +6,51 @@
 [ext_resource type="Texture2D" uid="uid://cspnbbet7dg2j" path="res://Assets/Images/wood.png" id="4_n83ie"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2042a"]
-content_margin_left = 30.0
-content_margin_top = 30.0
-content_margin_right = 30.0
-content_margin_bottom = 70.0
+content_margin_left = 15.0
+content_margin_top = 5.0
+content_margin_right = 15.0
+content_margin_bottom = 5.0
 bg_color = Color(0, 0, 0, 0.490196)
-corner_radius_top_left = 100
-corner_radius_top_right = 100
-corner_radius_bottom_right = 100
-corner_radius_bottom_left = 100
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
 
-[node name="Control" type="Control"]
-layout_mode = 3
+[node name="StatsPanelWrapper" type="BoxContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -2266.0
-offset_bottom = -1275.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 script = ExtResource("1_ckd2f")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_2042a")
 
 [node name="PanelWrapper" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="Title" type="Label" parent="PanelContainer/PanelWrapper"]
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 150
+theme_override_font_sizes/font_size = 20
 text = "XXXXXX"
 
 [node name="Content" type="VBoxContainer" parent="PanelContainer/PanelWrapper"]
 layout_mode = 2
-theme_override_constants/separation = 20
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 5
 
 [node name="Wood" type="HBoxContainer" parent="PanelContainer/PanelWrapper/Content"]
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 5
 
 [node name="WoodImage" type="TextureRect" parent="PanelContainer/PanelWrapper/Content/Wood"]
 layout_mode = 2
@@ -61,18 +60,18 @@ expand_mode = 3
 [node name="WoodNumber" type="Label" parent="PanelContainer/PanelWrapper/Content/Wood"]
 layout_mode = 2
 size_flags_horizontal = 8
-theme_override_font_sizes/font_size = 120
+theme_override_font_sizes/font_size = 15
 text = "XXX XXX"
 
 [node name="WoodUnit" type="Label" parent="PanelContainer/PanelWrapper/Content/Wood"]
 layout_mode = 2
 size_flags_horizontal = 8
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 15
 text = "T/tours"
 
 [node name="Ice" type="HBoxContainer" parent="PanelContainer/PanelWrapper/Content"]
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 5
 
 [node name="IceImage" type="TextureRect" parent="PanelContainer/PanelWrapper/Content/Ice"]
 layout_mode = 2
@@ -81,17 +80,17 @@ expand_mode = 3
 
 [node name="IceNumber" type="Label" parent="PanelContainer/PanelWrapper/Content/Ice"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 120
+theme_override_font_sizes/font_size = 15
 text = "XXX XXX"
 
 [node name="IceUnit" type="Label" parent="PanelContainer/PanelWrapper/Content/Ice"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 15
 text = "T/tours"
 
 [node name="Houblon" type="HBoxContainer" parent="PanelContainer/PanelWrapper/Content"]
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 5
 
 [node name="HoublonImage" type="TextureRect" parent="PanelContainer/PanelWrapper/Content/Houblon"]
 layout_mode = 2
@@ -100,10 +99,10 @@ expand_mode = 3
 
 [node name="HoublonNumber" type="Label" parent="PanelContainer/PanelWrapper/Content/Houblon"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 120
+theme_override_font_sizes/font_size = 15
 text = "XXX XXX"
 
 [node name="HoublonUnit" type="Label" parent="PanelContainer/PanelWrapper/Content/Houblon"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 15
 text = "T/tours"
