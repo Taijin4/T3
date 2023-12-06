@@ -1,0 +1,103 @@
+[gd_scene load_steps=5 format=3 uid="uid://cetmaf04ogscp"]
+
+[ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_s4rbo"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_s7ea6"]
+viewport_path = NodePath("Button/SubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1p62m"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.803922, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojd7k"]
+bg_color = Color(0.105882, 1, 0.0313726, 1)
+
+[node name="LevelWrapper" type="Control"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -952.0
+offset_bottom = -578.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+script = ExtResource("1_s4rbo")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+icon = SubResource("ViewportTexture_s7ea6")
+
+[node name="Locked" type="PanelContainer" parent="Button"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1p62m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Button/Locked"]
+layout_mode = 2
+alignment = 1
+
+[node name="price" type="Label" parent="Button/Locked/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = "DEFAULT PRICE"
+
+[node name="addition" type="Label" parent="Button/Locked/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = "DEFAULT ADDITIONS"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Button"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Button/VBoxContainer"]
+layout_mode = 2
+text = "dzehjvfzudzvfuz"
+
+[node name="SubViewport" type="SubViewport" parent="Button"]
+
+[node name="Unlocked" type="PanelContainer" parent="Button/SubViewport"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ojd7k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Button/SubViewport/Unlocked"]
+layout_mode = 2
+alignment = 1
+
+[node name="addition" type="Label" parent="Button/SubViewport/Unlocked/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = "DEFAULT ADDITIONS"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
