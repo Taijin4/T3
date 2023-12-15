@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8m4hqq01jib3"
-path="res://.godot/imported/3house0005.png-02231b853d7f74a7e2990baa9aea34e1.ctex"
+uid="uid://c0fqqh05mrht1"
+path="res://.godot/imported/3house0005.png-3a0badbeaecced7aa22a239e70c8a65d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/3house0005.png"
-dest_files=["res://.godot/imported/3house0005.png-02231b853d7f74a7e2990baa9aea34e1.ctex"]
+source_file="res://Assets/Images/MapAssets/3house0005.png"
+dest_files=["res://.godot/imported/3house0005.png-3a0badbeaecced7aa22a239e70c8a65d.ctex"]
 
 [params]
 

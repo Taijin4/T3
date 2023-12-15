@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi1ry5ioe5oeo"
-path="res://.godot/imported/bancs.png-d816a5245efcd426136b8ec7af5fc42c.ctex"
+uid="uid://bouyvybyskvqh"
+path="res://.godot/imported/bancs.png-b8c3f52a4167021dcdf6816376833f1f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/bancs.png"
-dest_files=["res://.godot/imported/bancs.png-d816a5245efcd426136b8ec7af5fc42c.ctex"]
+source_file="res://Assets/Images/MapAssets/bancs.png"
+dest_files=["res://.godot/imported/bancs.png-b8c3f52a4167021dcdf6816376833f1f.ctex"]
 
 [params]
 

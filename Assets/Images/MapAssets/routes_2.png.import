@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://26w0nengkkee"
-path="res://.godot/imported/routes_2.png-a6b0070dc4499441fdf1cfc0e70b93bd.ctex"
+uid="uid://d28vucf0kj6wc"
+path="res://.godot/imported/routes_2.png-2909d83ef698d2fc066af588b76abf5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/routes_2.png"
-dest_files=["res://.godot/imported/routes_2.png-a6b0070dc4499441fdf1cfc0e70b93bd.ctex"]
+source_file="res://Assets/Images/MapAssets/routes_2.png"
+dest_files=["res://.godot/imported/routes_2.png-2909d83ef698d2fc066af588b76abf5f.ctex"]
 
 [params]
 
