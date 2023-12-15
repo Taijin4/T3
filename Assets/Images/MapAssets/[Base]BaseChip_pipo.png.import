@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by03f0sef2er2"
-path="res://.godot/imported/[Base]BaseChip_pipo.png-d4bbfaadc60f0f9f146970c0c6846187.ctex"
+uid="uid://b1v1ooy8b0j7"
+path="res://.godot/imported/[Base]BaseChip_pipo.png-3d269fa979c7de40dba1c93e92954ac6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/[Base]BaseChip_pipo.png"
-dest_files=["res://.godot/imported/[Base]BaseChip_pipo.png-d4bbfaadc60f0f9f146970c0c6846187.ctex"]
+source_file="res://Assets/Images/MapAssets/[Base]BaseChip_pipo.png"
+dest_files=["res://.godot/imported/[Base]BaseChip_pipo.png-3d269fa979c7de40dba1c93e92954ac6.ctex"]
 
 [params]
 

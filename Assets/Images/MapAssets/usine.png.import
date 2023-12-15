@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coppjqyu5wbfq"
-path="res://.godot/imported/usine.png-3fb9ea223dc8f29f845b81b5d13c3bcb.ctex"
+uid="uid://b56iala648bc7"
+path="res://.godot/imported/usine.png-98afdd3e220ad2c29d1fd39e8689ad94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/usine.png"
-dest_files=["res://.godot/imported/usine.png-3fb9ea223dc8f29f845b81b5d13c3bcb.ctex"]
+source_file="res://Assets/Images/MapAssets/usine.png"
+dest_files=["res://.godot/imported/usine.png-98afdd3e220ad2c29d1fd39e8689ad94.ctex"]
 
 [params]
 

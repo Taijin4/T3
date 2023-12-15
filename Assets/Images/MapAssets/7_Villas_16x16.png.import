@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyc32ybbchl6d"
-path="res://.godot/imported/7_Villas_16x16.png-c003c02c7a19b252cc44d76aea419a64.ctex"
+uid="uid://ltwr2i8s2e52"
+path="res://.godot/imported/7_Villas_16x16.png-cf08d70b389fa19f4e5cfa3fc2ed3d05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/7_Villas_16x16.png"
-dest_files=["res://.godot/imported/7_Villas_16x16.png-c003c02c7a19b252cc44d76aea419a64.ctex"]
+source_file="res://Assets/Images/MapAssets/7_Villas_16x16.png"
+dest_files=["res://.godot/imported/7_Villas_16x16.png-cf08d70b389fa19f4e5cfa3fc2ed3d05.ctex"]
 
 [params]
 
