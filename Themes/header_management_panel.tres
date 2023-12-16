@@ -1,0 +1,12 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://hxwshs2g0gyx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5p13s"]
+bg_color = Color(1, 1, 1, 1)
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[resource]
+default_font_size = 30
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 30
+Label/styles/normal = SubResource("StyleBoxFlat_5p13s")
