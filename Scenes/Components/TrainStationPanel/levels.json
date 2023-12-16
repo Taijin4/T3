@@ -1,0 +1,36 @@
+[
+	[
+		{
+			"num": 1,
+			"price": 10,
+			"addition": "+10% population"
+		},
+		{
+			"num": 2,
+			"price": 20,
+			"addition": "+10% population"
+		},
+		{
+			"num": 3,
+			"price": 40,
+			"addition": "+10% population"
+		}
+	],
+	[
+		{
+			"num": 1,
+			"price": 10,
+			"addition": "+10% population"
+		},
+		{
+			"num": 2,
+			"price": 20,
+			"addition": "+10% population"
+		},
+		{
+			"num": 3,
+			"price": 40,
+			"addition": "+10% population"
+		}
+	]
+]
