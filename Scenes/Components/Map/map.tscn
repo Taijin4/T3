@@ -15886,4 +15886,8 @@ layer_2/tile_data = PackedInt32Array(1048579, 1572867, 14, 1114115, 1572867, 15,
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1229, 901)
+limit_left = -100000
+limit_top = -100000
+limit_right = 100000
+limit_bottom = 100000
 script = ExtResource("1_shcrk")

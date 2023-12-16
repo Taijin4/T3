@@ -32,16 +32,16 @@ func _process(delta):
 	print(position)
 	print(position * zoom)
 	print(zoom)
-	if Input.is_action_pressed("MoveLeft"):
+	if Input.is_action_pressed("MoveRight"):
 		if ((2448 - position.x) * zoom.x > 578):
 			movement.x += 1
-	if Input.is_action_pressed("MoveRight"):
+	if Input.is_action_pressed("MoveLeft"):
 		if (position.x * zoom.x > 590):
 			movement.x -= 1
-	if Input.is_action_pressed("MoveUp"):
+	if Input.is_action_pressed("MoveDown"):
 		if ((1809 - position.y) * zoom.y > 330):
 			movement.y += 1
-	if Input.is_action_pressed("MoveDown"):
+	if Input.is_action_pressed("MoveUp"):
 		if (position.y * zoom.y > 335):
 			movement.y -= 1
 	position += movement.normalized() * 300 * delta
