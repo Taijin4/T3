@@ -15889,6 +15889,5 @@ layer_2/tile_data = PackedInt32Array(1769489, 23, 23, 1835025, 23, 23, 1900561, 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1452, 685)
 zoom = Vector2(0.38, 0.38)
-position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 script = ExtResource("18_ampp8")
