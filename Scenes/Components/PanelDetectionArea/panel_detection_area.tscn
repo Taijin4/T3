@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://Scenes/Components/PanelDetectionArea/panel_detection_area.gd" id="1_cvk7j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lkomq"]
-content_margin_left = 2.0
-content_margin_top = 2.0
-content_margin_right = 2.0
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
 content_margin_bottom = 2.0
 bg_color = Color(0, 0, 0, 0.439216)
 corner_radius_top_left = 10
@@ -26,7 +26,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_lkomq")
 
 [node name="Label" type="Label" parent="Bloc"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 40
 text = "DEFAULT"
 horizontal_alignment = 1
 
