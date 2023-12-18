@@ -38,6 +38,8 @@ metadata/HoverText = "Scierie"
 polygon = PackedVector2Array(2383, 415, 2386, 619, 2906, 618, 2907, 415)
 
 [node name="Brewery" parent="." instance=ExtResource("3_lxcd2")]
+metadata/PanelToOpen = NodePath("../UI/Panels/BreweryPanel")
+metadata/HoverText = "Brasserie"
 
 [node name="CollisionPolygon2D" parent="Brewery/Area2D" index="0"]
 polygon = PackedVector2Array(2386, 410, 2905, 412, 2905, 206, 2386, 206)
