@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2nitawiqkqd6"]
+[gd_scene load_steps=8 format=3 uid="uid://b2nitawiqkqd6"]
 
 [ext_resource type="PackedScene" uid="uid://bbgyirclom8br" path="res://Scenes/Components/StatsPanel/statspanel.tscn" id="1_cdmrd"]
 [ext_resource type="Script" path="res://Scenes/Screens/Main/main.gd" id="1_nvhvc"]
 [ext_resource type="PackedScene" uid="uid://cduxrea4t11wg" path="res://Scenes/Components/Map/map.tscn" id="3_knq8x"]
 [ext_resource type="PackedScene" uid="uid://d0l5nppu7kbi5" path="res://Scenes/Components/PanelDetectionArea/panel_detection_area.tscn" id="3_lxcd2"]
 [ext_resource type="PackedScene" uid="uid://dnn5cug8cayt0" path="res://Scenes/Components/TrainStationPanel/train_station.tscn" id="4_2u4hr"]
+[ext_resource type="PackedScene" uid="uid://cptwvbalrevu4" path="res://Scenes/Components/StatsMembersMoneyPanel/statsmembersmoneypanel.tscn" id="4_w1cil"]
 [ext_resource type="PackedScene" uid="uid://cl6bakqh0n77e" path="res://Scenes/Components/ResidentielPanel/residentiel_panel.tscn" id="6_xx4ig"]
 
 [node name="Node2D" type="Node2D"]
@@ -28,6 +29,8 @@ position = Vector2(-488, -971)
 polygon = PackedVector2Array(1753, 1788, 3401, 1783, 3400, 1755, 2488, 1753, 2488, 1702, 2461, 1702, 2446, 1673, 2413, 1616, 2300, 1612, 2198, 1591, 2117, 1525, 2031, 1593, 1964, 1603, 1806, 1615, 1755, 1702)
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="StatsMMPanelWrapper" parent="UI" instance=ExtResource("4_w1cil")]
 
 [node name="GroupStats" type="HBoxContainer" parent="UI"]
 layout_direction = 2

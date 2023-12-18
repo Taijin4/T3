@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbgyirclom8br"]
+[gd_scene load_steps=8 format=3 uid="uid://bbgyirclom8br"]
 
 [ext_resource type="Script" path="res://Scenes/Components/StatsPanel/statspanel.gd" id="1_ckd2f"]
 [ext_resource type="Texture2D" uid="uid://cjjaasi1ndpxn" path="res://Assets/Images/houblon.png" id="2_bctpp"]
 [ext_resource type="Texture2D" uid="uid://bv7ajahhu3j37" path="res://Assets/Images/ice-cube.png" id="3_2s5dy"]
 [ext_resource type="Texture2D" uid="uid://cspnbbet7dg2j" path="res://Assets/Images/wood.png" id="4_n83ie"]
+[ext_resource type="Texture2D" uid="uid://da3nyse1r7y76" path="res://Assets/Images/beer.png" id="5_qsdfu"]
+[ext_resource type="Texture2D" uid="uid://c25nh27f2ms6w" path="res://Assets/Images/other.png" id="6_avyr0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2042a"]
 content_margin_left = 15.0
@@ -54,14 +56,14 @@ theme_override_constants/separation = 3
 
 [node name="WoodImage" type="TextureRect" parent="PanelContainer/PanelWrapper/Content/Wood"]
 layout_mode = 2
-texture = ExtResource("2_bctpp")
+texture = ExtResource("4_n83ie")
 expand_mode = 3
 
 [node name="WoodNumber" type="Label" parent="PanelContainer/PanelWrapper/Content/Wood"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 10
-text = "XXX XXX"
+text = "--- ---"
 
 [node name="WoodUnit" type="Label" parent="PanelContainer/PanelWrapper/Content/Wood"]
 layout_mode = 2
@@ -81,7 +83,7 @@ expand_mode = 3
 [node name="IceNumber" type="Label" parent="PanelContainer/PanelWrapper/Content/Ice"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
-text = "XXX XXX"
+text = "--- ---"
 
 [node name="IceUnit" type="Label" parent="PanelContainer/PanelWrapper/Content/Ice"]
 layout_mode = 2
@@ -94,15 +96,53 @@ theme_override_constants/separation = 3
 
 [node name="HoublonImage" type="TextureRect" parent="PanelContainer/PanelWrapper/Content/Houblon"]
 layout_mode = 2
-texture = ExtResource("4_n83ie")
+texture = ExtResource("2_bctpp")
 expand_mode = 3
 
 [node name="HoublonNumber" type="Label" parent="PanelContainer/PanelWrapper/Content/Houblon"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
-text = "XXX XXX"
+text = "--- ---"
 
 [node name="HoublonUnit" type="Label" parent="PanelContainer/PanelWrapper/Content/Houblon"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "T/tours"
+
+[node name="Beer" type="HBoxContainer" parent="PanelContainer/PanelWrapper/Content"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="BeerImage" type="TextureRect" parent="PanelContainer/PanelWrapper/Content/Beer"]
+layout_mode = 2
+texture = ExtResource("5_qsdfu")
+expand_mode = 3
+
+[node name="BeerNumber" type="Label" parent="PanelContainer/PanelWrapper/Content/Beer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "--- ---"
+
+[node name="BeerUnit" type="Label" parent="PanelContainer/PanelWrapper/Content/Beer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "T/tours"
+
+[node name="Other" type="HBoxContainer" parent="PanelContainer/PanelWrapper/Content"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="OtherImage" type="TextureRect" parent="PanelContainer/PanelWrapper/Content/Other"]
+layout_mode = 2
+texture = ExtResource("6_avyr0")
+expand_mode = 3
+
+[node name="OtherNumber" type="Label" parent="PanelContainer/PanelWrapper/Content/Other"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "--- ---"
+
+[node name="OtherUnit" type="Label" parent="PanelContainer/PanelWrapper/Content/Other"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "T/tours"
