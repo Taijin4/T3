@@ -1,0 +1,36 @@
+[
+	[
+		{
+			"num": 1,
+			"price": 10,
+			"addition": "+10% ouvriers"
+		},
+		{
+			"num": 2,
+			"price": 20,
+			"addition": "+10% ouvriers"
+		},
+		{
+			"num": 3,
+			"price": 40,
+			"addition": "+10% ouvriers"
+		}
+	],
+	[
+		{
+			"num": 1,
+			"price": 10,
+			"addition": "+10% cadres"
+		},
+		{
+			"num": 2,
+			"price": 20,
+			"addition": "+10% cadres"
+		},
+		{
+			"num": 3,
+			"price": 40,
+			"addition": "+10% cadres"
+		}
+	]
+]
