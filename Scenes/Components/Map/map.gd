@@ -8,21 +8,21 @@ var tileMapSize = Vector2(2912, 1527)
 
 func _ready():
 	zoom = zoom_min
-	print(tileMapSize)
 	
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			print(zoom)
 			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 				if zoom > zoom_min:
 					zoom -= zoom_speed
-				elif zoom == zoom_min:
+					print("sup")
+				elif zoom <= zoom_min:
 					position = tileMapSize / 2
 					print("Min")
 			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 				if zoom < zoom_max:
 					zoom += zoom_speed
+			print(str(zoom) + "!=" + str(zoom_min))
 	pass
 
 
