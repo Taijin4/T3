@@ -11,10 +11,10 @@ content_margin_top = 5.0
 content_margin_right = 15.0
 content_margin_bottom = 5.0
 bg_color = Color(0, 0, 0, 0.490196)
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="StatsPanelWrapper" type="BoxContainer"]
 anchors_preset = 15
@@ -39,18 +39,18 @@ size_flags_vertical = 0
 [node name="Title" type="Label" parent="PanelContainer/PanelWrapper"]
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 13
 text = "XXXXXX"
 
 [node name="Content" type="VBoxContainer" parent="PanelContainer/PanelWrapper"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_constants/separation = 5
+theme_override_constants/separation = 1
 
 [node name="Wood" type="HBoxContainer" parent="PanelContainer/PanelWrapper/Content"]
 layout_mode = 2
-theme_override_constants/separation = 5
+theme_override_constants/separation = 3
 
 [node name="WoodImage" type="TextureRect" parent="PanelContainer/PanelWrapper/Content/Wood"]
 layout_mode = 2
@@ -60,18 +60,18 @@ expand_mode = 3
 [node name="WoodNumber" type="Label" parent="PanelContainer/PanelWrapper/Content/Wood"]
 layout_mode = 2
 size_flags_horizontal = 8
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 10
 text = "XXX XXX"
 
 [node name="WoodUnit" type="Label" parent="PanelContainer/PanelWrapper/Content/Wood"]
 layout_mode = 2
 size_flags_horizontal = 8
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 10
 text = "T/tours"
 
 [node name="Ice" type="HBoxContainer" parent="PanelContainer/PanelWrapper/Content"]
 layout_mode = 2
-theme_override_constants/separation = 5
+theme_override_constants/separation = 3
 
 [node name="IceImage" type="TextureRect" parent="PanelContainer/PanelWrapper/Content/Ice"]
 layout_mode = 2
@@ -80,17 +80,17 @@ expand_mode = 3
 
 [node name="IceNumber" type="Label" parent="PanelContainer/PanelWrapper/Content/Ice"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 10
 text = "XXX XXX"
 
 [node name="IceUnit" type="Label" parent="PanelContainer/PanelWrapper/Content/Ice"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 10
 text = "T/tours"
 
 [node name="Houblon" type="HBoxContainer" parent="PanelContainer/PanelWrapper/Content"]
 layout_mode = 2
-theme_override_constants/separation = 5
+theme_override_constants/separation = 3
 
 [node name="HoublonImage" type="TextureRect" parent="PanelContainer/PanelWrapper/Content/Houblon"]
 layout_mode = 2
@@ -99,10 +99,10 @@ expand_mode = 3
 
 [node name="HoublonNumber" type="Label" parent="PanelContainer/PanelWrapper/Content/Houblon"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 10
 text = "XXX XXX"
 
 [node name="HoublonUnit" type="Label" parent="PanelContainer/PanelWrapper/Content/Houblon"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 10
 text = "T/tours"
