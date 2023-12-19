@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://disdjgvvwwv04"]
+
+[ext_resource type="Script" path="res://Scenes/Components/ManagementsPanels/FieldsPanel/fields_panel.gd" id="1_3c5wi"]
+[ext_resource type="PackedScene" uid="uid://lcmk3kahmkxi" path="res://Scenes/Components/ClosingCross/closing_cross.tscn" id="2_8fdd4"]
+[ext_resource type="Theme" uid="uid://hxwshs2g0gyx" path="res://Themes/header_management_panel.tres" id="3_2qk70"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5av4"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(1, 1, 1, 0.65098)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="FieldsPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3c5wi")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+y_sort_enabled = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e5av4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+y_sort_enabled = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "CHAMPS
+"
+
+[node name="ClosingCross" parent="PanelContainer/VBoxContainer/Header" instance=ExtResource("2_8fdd4")]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="Content" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+y_sort_enabled = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Ameliorations" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="Header" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Content/Ameliorations"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Content/Ameliorations/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_2qk70")
+text = "AMELIORATIONS"
+horizontal_alignment = 1
+
+[node name="Levels" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Content/Ameliorations"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Header/ClosingCross" to="." method="_on_closing_cross_pressed"]

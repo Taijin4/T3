@@ -3,7 +3,7 @@ extends Control
 signal hide_panel
 
 func _ready():
-	var management_panel = ManagementPanel.new('SawmillPanel', $PanelContainer/VBoxContainer/Content/Ameliorations/Levels)
+	var management_panel = ManagementPanel.new('BreweryPanel', $PanelContainer/VBoxContainer/Content/Ameliorations/Levels)
 	
 
 

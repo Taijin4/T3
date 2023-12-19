@@ -19,7 +19,11 @@ func _on_panel_closed():
 	for child in $UI/Panels.get_children():
 		if child is Control:
 			child.hide()
-	$Map.modulate = "#ffffff"
+	for area in $DetectionAreas.get_children():
+		area.enable()
+	$Map.enable()
 
 func _on_panel_opened():
-	$Map.modulate = "#878787"
+	for area in $DetectionAreas.get_children():
+		area.disable()
+	$Map.disable()

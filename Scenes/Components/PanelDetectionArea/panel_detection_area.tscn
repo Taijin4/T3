@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://Scenes/Components/PanelDetectionArea/panel_detection_area.gd" id="1_cvk7j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lkomq"]
-content_margin_left = 2.0
-content_margin_top = 2.0
-content_margin_right = 2.0
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
 content_margin_bottom = 2.0
 bg_color = Color(0, 0, 0, 0.439216)
 corner_radius_top_left = 10
@@ -26,13 +26,16 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_lkomq")
 
 [node name="Label" type="Label" parent="Bloc"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 40
 text = "DEFAULT"
 horizontal_alignment = 1
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
