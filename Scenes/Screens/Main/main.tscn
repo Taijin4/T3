@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b2nitawiqkqd6"]
+[gd_scene load_steps=11 format=3 uid="uid://b2nitawiqkqd6"]
 
 [ext_resource type="PackedScene" uid="uid://bbgyirclom8br" path="res://Scenes/Components/StatsPanel/statspanel.tscn" id="1_cdmrd"]
 [ext_resource type="Script" path="res://Scenes/Screens/Main/main.gd" id="1_nvhvc"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cl6bakqh0n77e" path="res://Scenes/Components/ManagementsPanels/ResidentielPanel/residentiel_panel.tscn" id="6_xx4ig"]
 [ext_resource type="PackedScene" uid="uid://d4f6kbsr0nabf" path="res://Scenes/Components/ManagementsPanels/SawmillPanel/sawmillpanel.tscn" id="8_kt6mm"]
 [ext_resource type="PackedScene" uid="uid://7n2d63pnxrad" path="res://Scenes/Components/ManagementsPanels/BreweryPanel/brewerypanel.tscn" id="9_d74r7"]
+[ext_resource type="PackedScene" uid="uid://b52qgcvlkrumu" path="res://Scenes/Components/ManagementsPanels/IceFactoryPanel/icefactory_panel.tscn" id="10_3wpe0"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_nvhvc")
@@ -43,6 +44,12 @@ metadata/HoverText = "Brasserie"
 
 [node name="CollisionPolygon2D" parent="Brewery/Area2D" index="0"]
 polygon = PackedVector2Array(2386, 410, 2905, 412, 2905, 206, 2386, 206)
+
+[node name="IceFactory" parent="." instance=ExtResource("3_lxcd2")]
+metadata/HoverText = "Glacière"
+
+[node name="CollisionPolygon2D" parent="IceFactory/Area2D" index="0"]
+polygon = PackedVector2Array(1993, 1, 1992, 197, 2906, 197, 2909, 1)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -99,16 +106,22 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 
+[node name="IceFactoryPanel" parent="UI/Panels" instance=ExtResource("10_3wpe0")]
+layout_mode = 2
+
 [connection signal="panel_was_opened" from="Residential" to="." method="_on_panel_opened"]
 [connection signal="panel_was_opened" from="TrainStation" to="." method="_on_panel_opened"]
 [connection signal="panel_was_opened" from="Sawmill" to="." method="_on_panel_opened"]
 [connection signal="panel_was_opened" from="Brewery" to="." method="_on_panel_opened"]
+[connection signal="panel_was_opened" from="IceFactory" to="." method="_on_panel_opened"]
 [connection signal="hide_panel" from="UI/Panels/TrainStationPanel" to="." method="_on_panel_closed"]
 [connection signal="hide_panel" from="UI/Panels/ResidentielPanel" to="." method="_on_panel_closed"]
 [connection signal="hide_panel" from="UI/Panels/SawmillPanel" to="." method="_on_panel_closed"]
 [connection signal="hide_panel" from="UI/Panels/BreweryPanel" to="." method="_on_panel_closed"]
+[connection signal="hide_panel" from="UI/Panels/IceFactoryPanel" to="." method="_on_panel_closed"]
 
 [editable path="Residential"]
 [editable path="TrainStation"]
 [editable path="Sawmill"]
 [editable path="Brewery"]
+[editable path="IceFactory"]
