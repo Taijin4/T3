@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://7n2d63pnxrad"]
 
-[ext_resource type="Script" path="res://Scenes/Components/ManagementsPanels/BreweryPanel/brewerypanel.gd" id="1_ehieo"]
+[ext_resource type="Script" path="res://Scenes/Components/ManagementsPanels/SawmillPanel/sawmillpanel.gd" id="1_ehieo"]
 [ext_resource type="PackedScene" uid="uid://lcmk3kahmkxi" path="res://Scenes/Components/ClosingCross/closing_cross.tscn" id="2_ncsst"]
 [ext_resource type="Theme" uid="uid://hxwshs2g0gyx" path="res://Themes/header_management_panel.tres" id="3_wqwmk"]
 
