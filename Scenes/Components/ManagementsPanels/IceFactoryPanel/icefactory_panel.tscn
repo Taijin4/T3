@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b52qgcvlkrumu"]
 
-[ext_resource type="Script" path="res://Scenes/Components/ManagementsPanels/IceFactoryPanel/icefactory_panel.gd" id="1_khdmc"]
+[ext_resource type="Script" path="res://Scenes/Components/ManagementsPanels/SawmillPanel/sawmillpanel.gd" id="1_khdmc"]
 [ext_resource type="PackedScene" uid="uid://lcmk3kahmkxi" path="res://Scenes/Components/ClosingCross/closing_cross.tscn" id="2_kklaf"]
 [ext_resource type="Theme" uid="uid://hxwshs2g0gyx" path="res://Themes/header_management_panel.tres" id="3_y18p3"]
 
