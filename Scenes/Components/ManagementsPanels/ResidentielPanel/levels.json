@@ -2,34 +2,73 @@
 	[
 		{
 			"num": 1,
-			"price": 10000,
+			"price": 0,
 			"addition": [
 				{
 					"name" : "humans",
-					"value" : 150,
-					"sentence" : "+ {value} habitations pour travailleurs"
+					"value" : 40,
+					"sentence" : "+ {value} habitations pour travailleurs",
+					"type" : "production"
+				},
+				{
+					"name" : "other",
+					"value" : 15,
+					"sentence" : "",
+					"type" : "need"
 				}
 			]
 		},
 		{
 			"num": 2,
-			"price": 20000,
+			"price": 10000,
 			"addition": [
 				{
 					"name" : "humans",
-					"value" : 400,
-					"sentence" : "+ {value} habitations pour travailleurs"
+					"value" : 120,
+					"sentence" : "+ {value} habitations pour travailleurs",
+					"type" : "production"
+				},
+				{
+					"name" : "other",
+					"value" : 40,
+					"sentence" : "",
+					"type" : "need"
 				}
 			]
 		},
 		{
 			"num": 3,
+			"price": 20000,
+			"addition": [
+				{
+					"name" : "humans",
+					"value" : 180,
+					"sentence" : "+ {value} habitations pour travailleurs",
+					"type" : "production"
+				},
+				{
+					"name" : "other",
+					"value" : 60,
+					"sentence" : "",
+					"type" : "need"
+				}
+			]
+		},
+		{
+			"num": 4,
 			"price": 27000,
 			"addition": [
 				{
 					"name" : "humans",
-					"value" : 1000,
-					"sentence" : "+ {value} habitations pour travailleurs"
+					"value" : 220,
+					"sentence" : "+ {value} habitations pour travailleurs",
+					"type" : "production"
+				},
+				{
+					"name" : "other",
+					"value" : 75,
+					"sentence" : "",
+					"type" : "need"
 				}
 			]
 		}
