@@ -39,21 +39,24 @@ metadata/PanelToOpen = NodePath("../../UI/Panels/SawmillPanel")
 metadata/HoverText = "Scierie"
 
 [node name="CollisionPolygon2D" parent="DetectionAreas/Sawmill/Area2D" index="0"]
-polygon = PackedVector2Array(2383, 415, 2386, 619, 2906, 618, 2907, 415)
+position = Vector2(0, 159)
+polygon = PackedVector2Array(2259, 399, 2258, 620, 2909, 620, 2909, 399)
 
 [node name="Brewery" parent="DetectionAreas" instance=ExtResource("3_lxcd2")]
 metadata/PanelToOpen = NodePath("../../UI/Panels/BreweryPanel")
 metadata/HoverText = "Brasserie"
 
 [node name="CollisionPolygon2D" parent="DetectionAreas/Brewery/Area2D" index="0"]
-polygon = PackedVector2Array(2386, 410, 2905, 412, 2905, 206, 2386, 206)
+position = Vector2(-128, 120)
+polygon = PackedVector2Array(2386, 410, 3036, 412, 3029, 230, 2386, 230)
 
 [node name="IceFactory" parent="DetectionAreas" instance=ExtResource("3_lxcd2")]
 metadata/PanelToOpen = NodePath("../../UI/Panels/IceFactoryPanel")
 metadata/HoverText = "Glacière"
 
 [node name="CollisionPolygon2D" parent="DetectionAreas/IceFactory/Area2D" index="0"]
-polygon = PackedVector2Array(1993, 1, 1992, 197, 2906, 197, 2909, 1)
+position = Vector2(-1, 125)
+polygon = PackedVector2Array(1989, -124, 1990, 84, 2258, 80, 2263, 197, 2906, 197, 2911, -121)
 
 [node name="Fields" parent="DetectionAreas" instance=ExtResource("3_lxcd2")]
 metadata/PanelToOpen = NodePath("../../UI/Panels/FieldsPanel")
