@@ -69,7 +69,7 @@ text = "--- ---"
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 10
-text = "T/tours"
+text = "T/tour"
 
 [node name="Ice" type="HBoxContainer" parent="PanelContainer/PanelWrapper/Content"]
 layout_mode = 2
@@ -88,7 +88,7 @@ text = "--- ---"
 [node name="IceUnit" type="Label" parent="PanelContainer/PanelWrapper/Content/Ice"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
-text = "T/tours"
+text = "T/tour"
 
 [node name="Houblon" type="HBoxContainer" parent="PanelContainer/PanelWrapper/Content"]
 layout_mode = 2
@@ -107,7 +107,7 @@ text = "--- ---"
 [node name="HoublonUnit" type="Label" parent="PanelContainer/PanelWrapper/Content/Houblon"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
-text = "T/tours"
+text = "T/tour"
 
 [node name="Beer" type="HBoxContainer" parent="PanelContainer/PanelWrapper/Content"]
 layout_mode = 2
@@ -126,7 +126,7 @@ text = "--- ---"
 [node name="BeerUnit" type="Label" parent="PanelContainer/PanelWrapper/Content/Beer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
-text = "T/tours"
+text = "L/tour"
 
 [node name="Other" type="HBoxContainer" parent="PanelContainer/PanelWrapper/Content"]
 layout_mode = 2
@@ -145,4 +145,4 @@ text = "--- ---"
 [node name="OtherUnit" type="Label" parent="PanelContainer/PanelWrapper/Content/Other"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
-text = "T/tours"
+text = "T/tour"
