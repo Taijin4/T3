@@ -8,6 +8,11 @@
 					"name" : "materials",
 					"value" : 10000,
 					"sentence" : "+ {value} tonnes d'importation de matériaux"
+				},
+				{
+					"name" : "other",
+					"value" : 5,
+					"sentence" : "+ {value} tonnes de production de bières"
 				}
 			]
 		},
