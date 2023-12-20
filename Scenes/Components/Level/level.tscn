@@ -10,16 +10,14 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -952.0
-offset_bottom = -578.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
-size_flags_vertical = 2
+size_flags_vertical = 3
 script = ExtResource("1_51hyw")
 
 [node name="Button" type="Button" parent="."]
-modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,43 +27,47 @@ grow_vertical = 2
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_htt4t")
 
-[node name="Locked" type="VBoxContainer" parent="Button"]
-visible = false
+[node name="Margin" type="MarginContainer" parent="Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Locked" type="VBoxContainer" parent="Button/Margin"]
+layout_mode = 2
 alignment = 1
 
-[node name="LockedPrice" type="Label" parent="Button/Locked"]
+[node name="LockedPrice" type="Label" parent="Button/Margin/Locked"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
 text = "DEFAULT PRICE"
 
-[node name="LockedAddition" type="Label" parent="Button/Locked"]
+[node name="LockedAddition" type="VBoxContainer" parent="Button/Margin/Locked"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
-text = "DEFAULT ADDITIONS"
+size_flags_vertical = 2
 
-[node name="Unlocked" type="VBoxContainer" parent="Button"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="UnlockedPrice" type="Label" parent="Button/Unlocked"]
+[node name="Unlocked" type="VBoxContainer" parent="Button/Margin"]
+visible = false
 layout_mode = 2
-text = "dzehjvfzudzvfuz"
+
+[node name="UnlockedLevel" type="Label" parent="Button/Margin/Unlocked"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "NIVEAU DEFAULT"
 horizontal_alignment = 1
 
-[node name="UnlockedAddition" type="Label" parent="Button/Unlocked"]
+[node name="UnlockedAddition" type="VBoxContainer" parent="Button/Margin/Unlocked"]
 layout_mode = 2
-horizontal_alignment = 1
+size_flags_vertical = 4
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
