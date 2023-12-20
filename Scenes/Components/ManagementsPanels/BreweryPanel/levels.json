@@ -5,9 +5,9 @@
 			"price": 12000,
 			"addition": [
 				{
-					"name" : "bieres",
+					"name" : "beer",
 					"value" : 5000,
-					"sentence" : "+ 5000 tonnes de production de {value}"
+					"sentence" : "+ {value} tonnes de production de bières"
 				}
 			]
 		},
@@ -16,9 +16,9 @@
 			"price": 20000,
 			"addition": [
 				{
-					"name" : "bieres",
+					"name" : "beer",
 					"value" : 15000,
-					"sentence" : "+ 15000 tonnes de production de {value}"
+					"sentence" : "+ {value} tonnes de production de bières"
 				}
 			]
 		},
@@ -27,9 +27,9 @@
 			"price": 25000,
 			"addition": [
 				{
-					"name" : "bieres",
+					"name" : "beer",
 					"value" : 25000,
-					"sentence" : "+ 25000 tonnes de production de {value}"
+					"sentence" : "+ {value} tonnes de production de bières"
 				}
 			]
 		}

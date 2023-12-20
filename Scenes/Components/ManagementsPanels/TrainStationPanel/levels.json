@@ -5,9 +5,9 @@
 			"price": 5000,
 			"addition": [
 				{
-					"name" : "materiau",
+					"name" : "materials",
 					"value" : 10000,
-					"sentence" : "+ 10000 tonnes d'importation de {value}"
+					"sentence" : "+ {value} tonnes d'importation de matériaux"
 				}
 			]
 		},
@@ -16,9 +16,9 @@
 			"price": 20000,
 			"addition": [
 				{
-					"name" : "materiau",
+					"name" : "materials",
 					"value" : 25000,
-					"sentence" : "+ 25000 tonnes d'importation de {value}"
+					"sentence" : "+ {value} tonnes d'importation de matériaux"
 				}
 			]
 		},
@@ -27,9 +27,9 @@
 			"price": 35000,
 			"addition": [
 				{
-					"name" : "materiau",
+					"name" : "materials",
 					"value" : 50000,
-					"sentence" : "+ 50000 tonnes d'importation de {value}"
+					"sentence" : "+ {value} tonnes d'importation de matériaux"
 				}
 			]
 		}
@@ -40,9 +40,9 @@
 			"price": 15000,
 			"addition": [
 				{
-					"name" : "materiau",
+					"name" : "materials",
 					"value" : 7000,
-					"sentence" : "+ 7000 tonnes d'exportation de {value}"
+					"sentence" : "+ {value} tonnes d'exportation de matériaux"
 				}
 			]
 		},
@@ -51,9 +51,9 @@
 			"price": 35000,
 			"addition": [
 				{
-					"name" : "materiau",
+					"name" : "materials",
 					"value" : 20000,
-					"sentence" : "+ 20000 tonnes d'exportation de {value}"
+					"sentence" : "+ {value} tonnes d'exportation de matériaux"
 				}
 			]
 		},
@@ -62,9 +62,9 @@
 			"price": 50000,
 			"addition": [
 				{
-					"name" : "materiau",
+					"name" : "materials",
 					"value" : 35000,
-					"sentence" : "+ 35000 tonnes d'exportation de {value}"
+					"sentence" : "+ {value} tonnes d'exportation de matériaux"
 				}
 			]
 		}

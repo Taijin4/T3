@@ -5,9 +5,9 @@
 			"price": 5000,
 			"addition": [
 				{
-					"name" : "glace",
+					"name" : "ice",
 					"value" : 15000,
-					"sentence" : "+ 15000 tonnes de production de {value}"
+					"sentence" : "+ {value} tonnes de production de glace"
 				}
 			]
 		},
@@ -16,9 +16,9 @@
 			"price": 10000,
 			"addition": [
 				{
-					"name" : "glace",
+					"name" : "ice",
 					"value" : 25000,
-					"sentence" : "+ 35000 tonnes de production de {value}"
+					"sentence" : "+ {value} tonnes de production de glace"
 				}
 			]
 		},
@@ -27,9 +27,9 @@
 			"price": 12000,
 			"addition": [
 				{
-					"name" : "glace",
+					"name" : "ice",
 					"value" : 50000,
-					"sentence" : "+ 25000 tonnes de production de {value}"
+					"sentence" : "+ {value} tonnes de production de glace"
 				}
 			]
 		}
