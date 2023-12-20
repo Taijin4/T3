@@ -69,28 +69,33 @@ polygon = PackedVector2Array(4, 824, 1419, 824, 1423, 1526, -6, 1533)
 
 [node name="StatsMMPanelWrapper" parent="UI" instance=ExtResource("4_w1cil")]
 
-[node name="GroupStats" type="HBoxContainer" parent="UI"]
-layout_direction = 2
+[node name="Stats" type="MarginContainer" parent="UI"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -516.0
-offset_bottom = 99.0
+offset_left = -464.0
+offset_bottom = 134.0
 grow_horizontal = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="GroupStats" type="HBoxContainer" parent="UI/Stats"]
+layout_direction = 2
+layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Importation" parent="UI/GroupStats" instance=ExtResource("1_cdmrd")]
+[node name="Importation" parent="UI/Stats/GroupStats" instance=ExtResource("1_cdmrd")]
 layout_mode = 2
 
-[node name="Exportation" parent="UI/GroupStats" instance=ExtResource("1_cdmrd")]
+[node name="Exportation" parent="UI/Stats/GroupStats" instance=ExtResource("1_cdmrd")]
 layout_mode = 2
 
-[node name="LocalNeed" parent="UI/GroupStats" instance=ExtResource("1_cdmrd")]
+[node name="LocalNeed" parent="UI/Stats/GroupStats" instance=ExtResource("1_cdmrd")]
 layout_mode = 2
 
-[node name="LocalProduction" parent="UI/GroupStats" instance=ExtResource("1_cdmrd")]
+[node name="LocalProduction" parent="UI/Stats/GroupStats" instance=ExtResource("1_cdmrd")]
 layout_mode = 2
 
 [node name="Panels" type="MarginContainer" parent="UI"]

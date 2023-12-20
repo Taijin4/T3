@@ -25,59 +25,76 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 script = ExtResource("1_i7jj8")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_2042a")
 
-[node name="PanelWrapper" type="VBoxContainer" parent="PanelContainer"]
+[node name="PanelWrapper" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="Content" type="VBoxContainer" parent="PanelContainer/PanelWrapper"]
+[node name="Content" type="VBoxContainer" parent="MarginContainer/PanelContainer/PanelWrapper"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/separation = 5
 
-[node name="Members" type="HBoxContainer" parent="PanelContainer/PanelWrapper/Content"]
+[node name="Members" type="HBoxContainer" parent="MarginContainer/PanelContainer/PanelWrapper/Content"]
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="MembersImage" type="TextureRect" parent="PanelContainer/PanelWrapper/Content/Members"]
+[node name="MembersImage" type="TextureRect" parent="MarginContainer/PanelContainer/PanelWrapper/Content/Members"]
 layout_mode = 2
 texture = ExtResource("2_23csp")
 expand_mode = 3
 
-[node name="MembersValue" type="Label" parent="PanelContainer/PanelWrapper/Content/Members"]
+[node name="MembersMinValue" type="Label" parent="MarginContainer/PanelContainer/PanelWrapper/Content/Members"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 15
 text = "--- ---"
 
-[node name="Comparator" type="Label" parent="PanelContainer/PanelWrapper/Content/Members"]
+[node name="Comparator2" type="Label" parent="MarginContainer/PanelContainer/PanelWrapper/Content/Members"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 15
 text = "/"
 
-[node name="MembersMaxValue" type="Label" parent="PanelContainer/PanelWrapper/Content/Members"]
+[node name="MembersValue" type="Label" parent="MarginContainer/PanelContainer/PanelWrapper/Content/Members"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 15
 text = "--- ---"
 
-[node name="Money" type="HBoxContainer" parent="PanelContainer/PanelWrapper/Content"]
+[node name="Comparator" type="Label" parent="MarginContainer/PanelContainer/PanelWrapper/Content/Members"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 15
+text = "/"
+
+[node name="MembersMaxValue" type="Label" parent="MarginContainer/PanelContainer/PanelWrapper/Content/Members"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 15
+text = "--- ---"
+
+[node name="Money" type="HBoxContainer" parent="MarginContainer/PanelContainer/PanelWrapper/Content"]
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="MoneyImage" type="TextureRect" parent="PanelContainer/PanelWrapper/Content/Money"]
+[node name="MoneyImage" type="TextureRect" parent="MarginContainer/PanelContainer/PanelWrapper/Content/Money"]
 layout_mode = 2
 texture = ExtResource("3_oxus8")
 expand_mode = 3
 
-[node name="MoneyValue" type="Label" parent="PanelContainer/PanelWrapper/Content/Money"]
+[node name="MoneyValue" type="Label" parent="MarginContainer/PanelContainer/PanelWrapper/Content/Money"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "--- ---"
