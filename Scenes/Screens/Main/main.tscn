@@ -133,6 +133,26 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 
+[node name="NextRound" type="MarginContainer" parent="UI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -298.0
+offset_top = -67.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Button" type="Button" parent="UI/NextRound"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 35
+text = "Époque suivante"
+
 [connection signal="panel_was_opened" from="DetectionAreas/Residential" to="." method="_on_panel_opened"]
 [connection signal="panel_was_opened" from="DetectionAreas/TrainStation" to="." method="_on_panel_opened"]
 [connection signal="panel_was_opened" from="DetectionAreas/Sawmill" to="." method="_on_panel_opened"]
@@ -145,6 +165,7 @@ layout_mode = 2
 [connection signal="hide_panel" from="UI/Panels/BreweryPanel" to="." method="_on_panel_closed"]
 [connection signal="hide_panel" from="UI/Panels/IceFactoryPanel" to="." method="_on_panel_closed"]
 [connection signal="hide_panel" from="UI/Panels/FieldsPanel" to="." method="_on_panel_closed"]
+[connection signal="pressed" from="UI/NextRound/Button" to="." method="__on_next_round"]
 
 [editable path="DetectionAreas/Residential"]
 [editable path="DetectionAreas/TrainStation"]
