@@ -2,35 +2,36 @@
 	[
 		{
 			"num": 1,
-			"price": 10,
-			"addition": "+10% ouvriers"
+			"price": 5000,
+			"addition": [
+				{
+					"name" : "glace",
+					"value" : 15000,
+					"sentence" : "+ 15000 tonnes de production de {value}"
+				}
+			]
 		},
 		{
 			"num": 2,
-			"price": 20,
-			"addition": "+10% ouvriers"
+			"price": 10000,
+			"addition": [
+				{
+					"name" : "glace",
+					"value" : 25000,
+					"sentence" : "+ 35000 tonnes de production de {value}"
+				}
+			]
 		},
 		{
 			"num": 3,
-			"price": 40,
-			"addition": "+10% ouvriers"
-		}
-	],
-	[
-		{
-			"num": 1,
-			"price": 10,
-			"addition": "+10% cadres"
-		},
-		{
-			"num": 2,
-			"price": 20,
-			"addition": "+10% cadres"
-		},
-		{
-			"num": 3,
-			"price": 40,
-			"addition": "+10% cadres"
+			"price": 12000,
+			"addition": [
+				{
+					"name" : "glace",
+					"value" : 50000,
+					"sentence" : "+ 25000 tonnes de production de {value}"
+				}
+			]
 		}
 	]
 ]

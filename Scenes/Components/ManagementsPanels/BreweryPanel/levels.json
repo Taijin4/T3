@@ -2,35 +2,36 @@
 	[
 		{
 			"num": 1,
-			"price": 10,
-			"addition": "+10% ouvriers"
+			"price": 12000,
+			"addition": [
+				{
+					"name" : "bieres",
+					"value" : 5000,
+					"sentence" : "+ 5000 tonnes de production de {value}"
+				}
+			]
 		},
 		{
 			"num": 2,
-			"price": 20,
-			"addition": "+10% ouvriers"
+			"price": 20000,
+			"addition": [
+				{
+					"name" : "bieres",
+					"value" : 15000,
+					"sentence" : "+ 15000 tonnes de production de {value}"
+				}
+			]
 		},
 		{
 			"num": 3,
-			"price": 40,
-			"addition": "+10% ouvriers"
-		}
-	],
-	[
-		{
-			"num": 1,
-			"price": 10,
-			"addition": "+10% cadres"
-		},
-		{
-			"num": 2,
-			"price": 20,
-			"addition": "+10% cadres"
-		},
-		{
-			"num": 3,
-			"price": 40,
-			"addition": "+10% cadres"
+			"price": 25000,
+			"addition": [
+				{
+					"name" : "bieres",
+					"value" : 25000,
+					"sentence" : "+ 25000 tonnes de production de {value}"
+				}
+			]
 		}
 	]
 ]
