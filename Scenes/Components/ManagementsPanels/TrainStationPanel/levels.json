@@ -2,35 +2,71 @@
 	[
 		{
 			"num": 1,
-			"price": 10,
-			"addition": "+10% population"
+			"price": 5000,
+			"addition": [
+				{
+					"name" : "materiau",
+					"value" : 10000,
+					"sentence" : "+ 10000 tonnes d'importation de {value}"
+				}
+			]
 		},
 		{
 			"num": 2,
-			"price": 20,
-			"addition": "+10% population"
+			"price": 20000,
+			"addition": [
+				{
+					"name" : "materiau",
+					"value" : 25000,
+					"sentence" : "+ 25000 tonnes d'importation de {value}"
+				}
+			]
 		},
 		{
 			"num": 3,
-			"price": 40,
-			"addition": "+10% population"
+			"price": 35000,
+			"addition": [
+				{
+					"name" : "materiau",
+					"value" : 50000,
+					"sentence" : "+ 50000 tonnes d'importation de {value}"
+				}
+			]
 		}
 	],
 	[
 		{
 			"num": 1,
-			"price": 10,
-			"addition": "+10% population"
+			"price": 15000,
+			"addition": [
+				{
+					"name" : "materiau",
+					"value" : 7000,
+					"sentence" : "+ 7000 tonnes d'exportation de {value}"
+				}
+			]
 		},
 		{
 			"num": 2,
-			"price": 20,
-			"addition": "+10% population"
+			"price": 35000,
+			"addition": [
+				{
+					"name" : "materiau",
+					"value" : 20000,
+					"sentence" : "+ 20000 tonnes d'exportation de {value}"
+				}
+			]
 		},
 		{
 			"num": 3,
-			"price": 40,
-			"addition": "+10% population"
+			"price": 50000,
+			"addition": [
+				{
+					"name" : "materiau",
+					"value" : 35000,
+					"sentence" : "+ 35000 tonnes d'exportation de {value}"
+				}
+			]
 		}
 	]
 ]

@@ -2,35 +2,36 @@
 	[
 		{
 			"num": 1,
-			"price": 10,
-			"addition": "+10% ouvriers"
+			"price": 20000,
+			"addition": [
+				{
+					"name" : "bois",
+					"value" : 15000,
+					"sentence" : "+ 15000 tonnes de stock de {value}"
+				}
+			]
 		},
 		{
 			"num": 2,
-			"price": 20,
-			"addition": "+10% ouvriers"
+			"price": 27000,
+			"addition": [
+				{
+					"name" : "bois",
+					"value" : 30000,
+					"sentence" : "+ 30000 tonnes de stock de {value}"
+				}
+			]
 		},
 		{
 			"num": 3,
-			"price": 40,
-			"addition": "+10% ouvriers"
-		}
-	],
-	[
-		{
-			"num": 1,
-			"price": 10,
-			"addition": "+10% cadres"
-		},
-		{
-			"num": 2,
-			"price": 20,
-			"addition": "+10% cadres"
-		},
-		{
-			"num": 3,
-			"price": 40,
-			"addition": "+10% cadres"
+			"price": 40000,
+			"addition": [
+				{
+					"name" : "bois",
+					"value" : 60000,
+					"sentence" : "+ 60000 tonnes de stock de {value}"
+				}
+			]
 		}
 	]
 ]

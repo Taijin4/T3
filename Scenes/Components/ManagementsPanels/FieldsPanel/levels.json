@@ -2,35 +2,36 @@
 	[
 		{
 			"num": 1,
-			"price": 10,
-			"addition": "+10% ouvriers"
+			"price": 15000,
+			"addition": [
+				{
+					"name" : "houblon",
+					"value" : 2500,
+					"sentence" : "+ 2500 tonnes de production de {value}"
+				}
+			]
 		},
 		{
 			"num": 2,
-			"price": 20,
-			"addition": "+10% ouvriers"
+			"price": 20000,
+			"addition": [
+				{
+					"name" : "houblon",
+					"value" : 7500,
+					"sentence" : "+ 15000 tonnes de production de {value}"
+				}
+			]
 		},
 		{
 			"num": 3,
-			"price": 40,
-			"addition": "+10% ouvriers"
-		}
-	],
-	[
-		{
-			"num": 1,
-			"price": 10,
-			"addition": "+10% cadres"
-		},
-		{
-			"num": 2,
-			"price": 20,
-			"addition": "+10% cadres"
-		},
-		{
-			"num": 3,
-			"price": 40,
-			"addition": "+10% cadres"
+			"price": 30000,
+			"addition": [
+				{
+					"name" : "houblon",
+					"value" : 17500,
+					"sentence" : "+ 25000 tonnes de production de {value}"
+				}
+			]
 		}
 	]
 ]
