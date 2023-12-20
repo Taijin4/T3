@@ -2,34 +2,97 @@
 	[
 		{
 			"num": 1,
-			"price": 5000,
+			"price": 0,
 			"addition": [
 				{
 					"name" : "ice",
-					"value" : 15000,
-					"sentence" : "+ {value} tonnes de production de glace"
+					"value" : 25,
+					"sentence" : "{value} tonnes de production de glace",
+					"type" : "production"
+				},
+				{
+					"name" : "other",
+					"value" : 5,
+					"sentence" : "",
+					"type" : "need"
+				},
+				{
+					"name" : "humans",
+					"value" : 10,
+					"sentence" : "Besoin de {value} ouvriers supplémantaires",
+					"type" : "need"
 				}
 			]
 		},
 		{
 			"num": 2,
-			"price": 10000,
+			"price": 5000,
 			"addition": [
 				{
 					"name" : "ice",
-					"value" : 25000,
-					"sentence" : "+ {value} tonnes de production de glace"
+					"value" : 100,
+					"sentence" : "{value} tonnes de production de glace",
+					"type" : "production"
+				},
+				{
+					"name" : "other",
+					"value" : 20,
+					"sentence" : "",
+					"type" : "need"
+				},
+				{
+					"name" : "humans",
+					"value" : 30,
+					"sentence" : "Besoin de {value} ouvriers supplémantaires",
+					"type" : "need"
 				}
 			]
 		},
 		{
 			"num": 3,
+			"price": 10000,
+			"addition": [
+				{
+					"name" : "ice",
+					"value" : 300,
+					"sentence" : "+ {value} tonnes de production de glace",
+					"type" : "production"
+				},
+				{
+					"name" : "other",
+					"value" : 50,
+					"sentence" : "",
+					"type" : "need"
+				},
+				{
+					"name" : "humans",
+					"value" : 45,
+					"sentence" : "Besoin de {value} ouvriers supplémantaires",
+					"type" : "need"
+				}
+			]
+		},
+		{
+			"num": 4,
 			"price": 12000,
 			"addition": [
 				{
 					"name" : "ice",
-					"value" : 50000,
-					"sentence" : "+ {value} tonnes de production de glace"
+					"value" : 500,
+					"sentence" : "+ {value} tonnes de production de glace",
+					"type" : "production"
+				},
+				{
+					"name" : "other",
+					"value" : 65,
+					"sentence" : "",
+					"type" : "need"
+				},
+				{
+					"name" : "humans",
+					"value" : 55,
+					"sentence" : "Besoin de {value} ouvriers supplémantaires",
+					"type" : "need"
 				}
 			]
 		}
