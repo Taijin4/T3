@@ -13,6 +13,7 @@
 				{
 					"name" : "other",
 					"value" : 5,
+					"sentence" : "",
 					"type" : "need"
 				},
 				{
@@ -36,6 +37,7 @@
 				{
 					"name" : "other",
 					"value" : 20,
+					"sentence" : "",
 					"type" : "need"
 				},
 				{
@@ -59,6 +61,7 @@
 				{
 					"name" : "other",
 					"value" : 50,
+					"sentence" : "",
 					"type" : "need"
 				},
 				{
@@ -82,6 +85,7 @@
 				{
 					"name" : "other",
 					"value" : 55,
+					"sentence" : "",
 					"type" : "need"
 				},
 				{
