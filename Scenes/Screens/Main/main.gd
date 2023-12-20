@@ -4,10 +4,10 @@ extends Node2D
 @onready var members = 50
 
 # Panels to show to user several values
-@onready var importation=$UI/GroupStats/Importation
-@onready var exportation=$UI/GroupStats/Exportation
-@onready var local_need=$UI/GroupStats/LocalNeed
-@onready var local_production=$UI/GroupStats/LocalProduction
+@onready var importation=$UI/Stats/GroupStats/Importation
+@onready var exportation=$UI/Stats/GroupStats/Exportation
+@onready var local_need=$UI/Stats/GroupStats/LocalNeed
+@onready var local_production=$UI/Stats/GroupStats/LocalProduction
 @onready var member_money=$UI/StatsMMPanelWrapper
 
 #Panels to modify values
