@@ -5,9 +5,9 @@
 			"price": 15000,
 			"addition": [
 				{
-					"name" : "houblon",
+					"name" : "hop",
 					"value" : 2500,
-					"sentence" : "+ 2500 tonnes de production de {value}"
+					"sentence" : "+ {value} tonnes de production de houblon"
 				}
 			]
 		},
@@ -16,9 +16,9 @@
 			"price": 20000,
 			"addition": [
 				{
-					"name" : "houblon",
+					"name" : "hop",
 					"value" : 7500,
-					"sentence" : "+ 15000 tonnes de production de {value}"
+					"sentence" : "+ {value} tonnes de production de houblon"
 				}
 			]
 		},
@@ -27,9 +27,9 @@
 			"price": 30000,
 			"addition": [
 				{
-					"name" : "houblon",
+					"name" : "hop",
 					"value" : 17500,
-					"sentence" : "+ 25000 tonnes de production de {value}"
+					"sentence" : "+ {value} tonnes de production de houblon"
 				}
 			]
 		}

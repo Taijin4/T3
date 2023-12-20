@@ -5,9 +5,9 @@
 			"price": 20000,
 			"addition": [
 				{
-					"name" : "bois",
+					"name" : "wood",
 					"value" : 15000,
-					"sentence" : "+ 15000 tonnes de stock de {value}"
+					"sentence" : "+ {value} tonnes de traitement de bois"
 				}
 			]
 		},
@@ -16,9 +16,9 @@
 			"price": 27000,
 			"addition": [
 				{
-					"name" : "bois",
+					"name" : "wood",
 					"value" : 30000,
-					"sentence" : "+ 30000 tonnes de stock de {value}"
+					"sentence" : "+ {value} tonnes de traitement de bois"
 				}
 			]
 		},
@@ -27,9 +27,9 @@
 			"price": 40000,
 			"addition": [
 				{
-					"name" : "bois",
+					"name" : "wood",
 					"value" : 60000,
-					"sentence" : "+ 60000 tonnes de stock de {value}"
+					"sentence" : "+ {value} tonnes de traitement de bois"
 				}
 			]
 		}

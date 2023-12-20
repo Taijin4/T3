@@ -5,9 +5,9 @@
 			"price": 10000,
 			"addition": [
 				{
-					"name" : "ouvriers",
+					"name" : "humans",
 					"value" : 150,
-					"sentence" : "+ 150 habitations pour {value}"
+					"sentence" : "+ {value} habitations pour travailleurs"
 				}
 			]
 		},
@@ -16,9 +16,9 @@
 			"price": 20000,
 			"addition": [
 				{
-					"name" : "ouvriers",
+					"name" : "humans",
 					"value" : 400,
-					"sentence" : "+ 400 habitations pour {value}"
+					"sentence" : "+ {value} habitations pour travailleurs"
 				}
 			]
 		},
@@ -27,9 +27,9 @@
 			"price": 27000,
 			"addition": [
 				{
-					"name" : "ouvriers",
+					"name" : "humans",
 					"value" : 1000,
-					"sentence" : "+ 1000 habitations de {value}"
+					"sentence" : "+ {value} habitations pour travailleurs"
 				}
 			]
 		}
