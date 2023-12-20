@@ -2,8 +2,8 @@ extends Control
 
 signal hide_panel
 
-@onready var need = {"humans" : -1, "other" : -1, "hop" : -1, "ice" : -1, "wood" : -1}
-@onready var production = {"beer" : -1}
+@onready var need = {"humans" : 10, "other" : 10, "hop" : 25, "ice" : 25, "wood" : 100}
+@onready var production = {"beer" : 50}
 
 func _ready():
 	var management_panel = ManagementPanel.new('BreweryPanel', $PanelContainer/VBoxContainer/Content/Ameliorations/Levels)

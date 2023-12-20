@@ -2,10 +2,10 @@ extends Control
 
 signal hide_panel
 
-@onready var need = {"humans" : -1, "other" : -1}
-@onready var production = {"humans" : 2000}
-@onready var importation = {"hop" : 0, "ice" : 5000, "wood" : 12000, "beer" : -1, "other" : 30000}
-@onready var exportation = {"hop" : 3500, "ice" : -0, "wood" : 0, "beer" : 10000, "other" : -1}
+@onready var need = {"humans" : 5, "other" : 10}
+@onready var production = {"humans" : 10}
+@onready var importation = {"hop" : 0, "ice" : 0, "wood" : 50, "beer" : -1, "other" : 60}
+@onready var exportation = {"hop" : 0, "ice" : 0, "wood" : 0, "beer" : 48, "other" : -1}
 
 
 

@@ -2,8 +2,8 @@ extends Control
 
 signal hide_panel
 
-@onready var need = {"humans" : -1, "other" : -1, "beer" : -1}
-@onready var production = {"humans" : -1}
+@onready var need = {"humans" : 5, "other" : 10, "beer" : 2}
+@onready var production = {"humans" : 50}
 
 func _ready():
 	var management_panel = ManagementPanel.new('ResidentielPanel', $PanelContainer/VBoxContainer/Content/Ameliorations/Levels)
