@@ -49,6 +49,7 @@ metadata/HoverText = "Brasserie"
 polygon = PackedVector2Array(2386, 410, 2905, 412, 2905, 206, 2386, 206)
 
 [node name="IceFactory" parent="DetectionAreas" instance=ExtResource("3_lxcd2")]
+metadata/PanelToOpen = NodePath("../../UI/Panels/IceFactoryPanel")
 metadata/HoverText = "Glacière"
 
 [node name="CollisionPolygon2D" parent="DetectionAreas/IceFactory/Area2D" index="0"]
