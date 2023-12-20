@@ -1,7 +1,7 @@
 extends Node2D
 # main variable
 @onready var money = 10000
-@onready var members = 40
+@onready var members = 50
 
 # Panels to show to user several values
 @onready var importation=$UI/GroupStats/Importation
@@ -30,7 +30,7 @@ func _ready():
 	local_need.init("BESOINS",nee["wood"],nee["ice"],nee["hop"],nee["beer"],nee["other"])
 	var pro = get_all_production()
 	local_production.init("PRODUCTION",pro["wood"],pro["ice"],pro["hop"],pro["beer"],-1)
-	member_money.init(money,resident.get_production("humans"),members)
+	member_money.init(money,resident.get_production("humans"),members, nee["humans"])
 
 func _on_panel_closed():
 	for child in $UI/Panels.get_children():

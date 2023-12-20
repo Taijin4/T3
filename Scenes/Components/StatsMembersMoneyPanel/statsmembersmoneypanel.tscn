@@ -50,6 +50,18 @@ layout_mode = 2
 texture = ExtResource("2_23csp")
 expand_mode = 3
 
+[node name="MembersMinValue" type="Label" parent="PanelContainer/PanelWrapper/Content/Members"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 15
+text = "--- ---"
+
+[node name="Comparator2" type="Label" parent="PanelContainer/PanelWrapper/Content/Members"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 15
+text = "/"
+
 [node name="MembersValue" type="Label" parent="PanelContainer/PanelWrapper/Content/Members"]
 layout_mode = 2
 size_flags_horizontal = 8
