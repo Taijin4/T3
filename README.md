@@ -16,3 +16,10 @@ Votre but est de retéritorialiser ce quartier au mieux, de la façon dont vous 
 ![Panel d'habitation](Assets/ReadMe/panel1.png)
 
 ![Panel de la gare](Assets/ReadMe/panel2.png)
+
+
+## Instructions d'installation
+1. Télécharger le fichier "Brassopolis.exe"
+1. Lancer le .exe
+1. Suivre les insctructions d'installations
+1. Profiter du jeu
