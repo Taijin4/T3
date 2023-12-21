@@ -11,7 +11,7 @@ var jsoncontroller = JsonController.new()
 
 
 func _ready():
-	$PanelContainer/VBoxContainer/Content/Ameliorations/LevelsInitiator.init("TrainStationPanel")
+	$PanelContainer/VBoxContainer/Content/Ameliorations/LevelsInitiator.init("TrainStationPanel", false)
 func _on_close_button_pressed():
 	hide_panel.emit()
 
