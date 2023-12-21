@@ -4,14 +4,15 @@ signal hide_panel
 signal change_money(sum : int)
 var jsoncontroller = JsonController.new()
 @onready var need = {"humans" : 5, "other" : 10}
-@onready var production = {"humans" : 10}
-@onready var importation = {"hop" : 0, "ice" : 0, "wood" : 50, "beer" : -1, "other" : 60}
-@onready var exportation = {"hop" : 0, "ice" : 0, "wood" : 0, "beer" : 48, "other" : -1}
+@onready var production = {"humans" : 50}
+@onready var importation = {"hop" : 0, "ice" : 0, "wood" : 0, "beer" : -1, "other" : 60}
+@onready var exportation = {"hop" : 0, "ice" : 0, "wood" : 0, "beer" : 0, "other" : -1}
 
 
 
 func _ready():
 	$PanelContainer/VBoxContainer/Content/Ameliorations/LevelsInitiator.init("TrainStationPanel", false)
+
 func _on_close_button_pressed():
 	hide_panel.emit()
 
