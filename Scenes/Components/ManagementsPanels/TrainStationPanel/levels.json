@@ -2,7 +2,7 @@
 	[
 		{
 			"num": 1,
-			"price": 5000,
+			"price": 20000,
 			"addition": [
 				{
 					"name" : "materials",
@@ -73,7 +73,7 @@
 	[
 		{
 			"num": 1,
-			"price": 5000,
+			"price": 20000,
 			"addition": [
 				{
 					"name" : "materials",
