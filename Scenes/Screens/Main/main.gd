@@ -68,11 +68,11 @@ func get_all_production():
 
 func increase_money(value : int):
 	self.money+=value
-	member_money.set_money(money+value)
+	member_money.set_money(money)
 
 func decrease_money(value : int):
 	self.money-=value
-	member_money.set_money(money-value)
+	member_money.set_money(money)
 
 func do_export_import(possible_exportation : Dictionary):
 	var import = train_st.get_importation()
