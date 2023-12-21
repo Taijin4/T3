@@ -24,7 +24,7 @@
 			"addition": [
 				{
 					"name" : "humans",
-					"value" : 120,
+					"value" : 140,
 					"sentence" : "+ {value} habitations pour travailleurs",
 					"type" : "production"
 				},
@@ -42,7 +42,7 @@
 			"addition": [
 				{
 					"name" : "humans",
-					"value" : 180,
+					"value" : 220,
 					"sentence" : "+ {value} habitations pour travailleurs",
 					"type" : "production"
 				},
@@ -60,7 +60,7 @@
 			"addition": [
 				{
 					"name" : "humans",
-					"value" : 220,
+					"value" : 280,
 					"sentence" : "+ {value} habitations pour travailleurs",
 					"type" : "production"
 				},

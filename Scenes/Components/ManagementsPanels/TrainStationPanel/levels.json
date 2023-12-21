@@ -2,7 +2,7 @@
 	[
 		{
 			"num": 1,
-			"price": 5000,
+			"price": 20000,
 			"addition": [
 				{
 					"name" : "materials",
@@ -14,12 +14,18 @@
 					"value" : 60,
 					"sentence" : "",
 					"type" : "need"
+				},
+				{
+					"name" : "humans",
+					"value" : 15,
+					"sentence" : "Besoin de {value} ouvriers supplémentaires",
+					"type" : "need"
 				}
 			]
 		},
 		{
 			"num": 2,
-			"price": 20000,
+			"price": 10000,
 			"addition": [
 				{
 					"name" : "materials",
@@ -31,12 +37,18 @@
 					"value" : 100,
 					"sentence" : "",
 					"type" : "need"
+				},
+				{
+					"name" : "humans",
+					"value" : 20,
+					"sentence" : "Besoin de {value} ouvriers supplémentaires",
+					"type" : "need"
 				}
 			]
 		},
 		{
 			"num": 3,
-			"price": 35000,
+			"price": 15000,
 			"addition": [
 				{
 					"name" : "materials",
@@ -47,6 +59,12 @@
 					"name" : "other",
 					"value" : 150,
 					"sentence" : "",
+					"type" : "need"
+				},
+				{
+					"name" : "humans",
+					"value" : 25,
+					"sentence" : "Besoin de {value} ouvriers supplémentaires",
 					"type" : "need"
 				}
 			]
@@ -55,7 +73,7 @@
 	[
 		{
 			"num": 1,
-			"price": 15000,
+			"price": 20000,
 			"addition": [
 				{
 					"name" : "materials",
@@ -67,12 +85,18 @@
 					"value" : 60,
 					"sentence" : "",
 					"type" : "need"
+				},
+				{
+					"name" : "humans",
+					"value" : 15,
+					"sentence" : "Besoin de {value} ouvriers supplémentaires",
+					"type" : "need"
 				}
 			]
 		},
 		{
 			"num": 2,
-			"price": 35000,
+			"price": 10000,
 			"addition": [
 				{
 					"name" : "materials",
@@ -84,12 +108,18 @@
 					"value" : 100,
 					"sentence" : "",
 					"type" : "need"
+				},
+				{
+					"name" : "humans",
+					"value" : 20,
+					"sentence" : "Besoin de {value} ouvriers supplémentaires",
+					"type" : "need"
 				}
 			]
 		},
 		{
 			"num": 3,
-			"price": 50000,
+			"price": 15000,
 			"addition": [
 				{
 					"name" : "materials",
@@ -100,6 +130,12 @@
 					"name" : "other",
 					"value" : 150,
 					"sentence" : "",
+					"type" : "need"
+				},
+				{
+					"name" : "humans",
+					"value" : 25,
+					"sentence" : "Besoin de {value} ouvriers supplémentaires",
 					"type" : "need"
 				}
 			]
