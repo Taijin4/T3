@@ -1,8 +1,8 @@
 extends Node2D
 # main variable
-@onready var money = 10000
+@onready var money = 15000
 @onready var members = 50
-@onready var materials_cost = {"wood" : 70, "hop" : 90, "ice" : 20, "other" : 50, "beer" : 110}
+@onready var materials_cost = {"wood" : 40, "hop" : 80, "ice" : 20, "other" : 20, "beer" : 220}
 @onready var warning = 0
 @onready var round = 1
 
@@ -22,7 +22,6 @@ extends Node2D
 @onready var field=$UI/Panels/FieldsPanel
 @onready var all_panels = [train_st,resident,sawmill,brewery,ice_fact,field]
 
-	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	update_panels_values()
@@ -108,12 +107,30 @@ func do_need():
 		storage[val] += prod[val] if prod[val] != -1 else 0
 	
 	var subsist_need = true
+	var ressources_not_aviable = {"wood" : 0, "ice" : 0, "hop" : 0, "beer" : 0}
 	#Remove ressources needed or export
 	for val in storage:
 		storage[val] -= need[val] if need[val] != -1 else 0
 		if storage[val] < 0 :
-			storage[val] = 0
+			ressources_not_aviable[val] += -storage[val]
 			subsist_need=false
+	var available = brewery.get_need()
+	available.erase("humans")
+	available.erase("other")
+	print("STORAGE",storage)
+	print("NOT AVAILABLE",ressources_not_aviable)
+	for val in available :
+		available[val] -= ressources_not_aviable[val]
+	var missing_beer = brewery.get_production("beer") - min(available["wood"]/2,min(available["ice"]*2,available["hop"]*2))
+	storage["beer"] -= missing_beer
+	storage["wood"] += missing_beer*2
+	storage["ice"] += missing_beer*0.5
+	storage["hop"] += missing_beer*0.5
+	if storage["beer"] < 0 :
+		storage["beer"] = 0
+		members = members/2 if members/2 < 10 else members-10
+		subsist_need=false
+	print("STORAGE",storage)
 	if !subsist_need :
 		warning+=1
 	for val in exp:
@@ -151,7 +168,6 @@ func update_panels_values():
 
 func __on_next_round():
 	round+=1
-	decrease_money(500)
 	do_need()
 	do_import_members()
 	update_panels_values()
