@@ -1,6 +1,7 @@
 extends Control
 
 signal hide_panel
+signal change_money(sum : int)
 var jsoncontroller = JsonController.new()
 
 @onready var need = {"humans" : 10, "other" : 10, "hop" : 25, "ice" : 25, "wood" : 100}
@@ -40,9 +41,7 @@ func set_production(value, type : String = ""):
 		production[type] = value
 
 
-func _on_levels_initiator_level_unlocked(column, level):
-	var panel_data = jsoncontroller.load_from_file('res://Scenes/Components/ManagementsPanels/BreweryPanel/levels.json')
-	var level_data = panel_data[column][level-1]
+func _on_levels_initiator_level_unlocked(column, level_data):
 	for addition in level_data["addition"]:
 		if addition["name"] != "other":
 			if addition["type"] == "need":
@@ -55,3 +54,5 @@ func _on_levels_initiator_level_unlocked(column, level):
 	need["wood"] = prod_beer * 2
 	need["hop"] = prod_beer / 2
 	need["ice"] = prod_beer / 2
+	
+	change_money.emit(-int(level_data["price"]))

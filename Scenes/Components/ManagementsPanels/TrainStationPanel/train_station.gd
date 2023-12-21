@@ -1,6 +1,7 @@
 extends Control
 
 signal hide_panel
+signal change_money(sum : int)
 var jsoncontroller = JsonController.new()
 @onready var need = {"humans" : 5, "other" : 10}
 @onready var production = {"humans" : 10}
@@ -72,9 +73,7 @@ func _on_e_text_field_new_text_submitted(type, text):
 	print(exportation)
 
 
-func _on_levels_initiator_level_unlocked(column, level):
-	var panel_data = jsoncontroller.load_from_file('res://Scenes/Components/ManagementsPanels/TrainStationPanel/levels.json')
-	var level_data = panel_data[column][level-1]
+func _on_levels_initiator_level_unlocked(column, level_data):
 	for addition in level_data["addition"]:
 		if addition["name"] != "other":
 			if addition.has("type"):
@@ -84,3 +83,4 @@ func _on_levels_initiator_level_unlocked(column, level):
 					production[addition["name"]] += addition["value"]
 				else:
 					printerr("YA UN PROBLEME DANS LE JSON CHEF !")
+	change_money.emit(-int(level_data["price"]))
