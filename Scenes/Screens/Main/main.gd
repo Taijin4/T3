@@ -1,7 +1,7 @@
 extends Node2D
 # main variable
 @onready var money = 10000
-@onready var members = 35
+@onready var members = 50
 @onready var materials_cost = {"wood" : 70, "hop" : 90, "ice" : 20, "other" : 50, "beer" : 110}
 @onready var warning = 0
 @onready var round = 1
@@ -124,7 +124,6 @@ func do_need():
 		storage[val] -= exp[val] if exp[val] != -1 else 0
 		if storage[val] > 20 :
 			warning+=1
-	print(storage)
 
 func detect_loose_win():
 	if warning >= 3 :
