@@ -2,10 +2,24 @@
 
 [sub_resource type="GDScript" id="GDScript_04ssy"]
 script/source = "extends Control
+signal new_text_submitted(type : String, text : String)
+var allowed_chars = RegEx.new()
 
 
 func _ready():
 	$content/title_container/title.text = get_meta(\"FieldTitle\")
+	allowed_chars.compile(\"[^0-9]\")
+	$content/input_container/LineEdit.text = \"0\"
+
+
+
+func _on_line_edit_text_submitted(new_text):
+	print(\"new : \" + new_text)
+	if new_text == \"\" or allowed_chars.search(new_text):
+		new_text = \"0\"
+		$content/input_container/LineEdit.text = \"0\"
+	else:
+		new_text_submitted.emit(get_meta(\"type\"), new_text)
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k73xe"]
@@ -28,6 +42,7 @@ size_flags_vertical = 3
 script = SubResource("GDScript_04ssy")
 metadata/FieldTitle = ""
 metadata/_edit_use_anchors_ = true
+metadata/type = ""
 
 [node name="content" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -57,6 +72,7 @@ size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_hnt1q")
 
 [node name="input" type="TextEdit" parent="content/input_container"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -71,6 +87,13 @@ shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
 caret_multiple = false
 
+[node name="LineEdit" type="LineEdit" parent="content/input_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+placeholder_text = "Entrez un nombre"
+max_length = 15
+flat = true
+
 [node name="price_container" type="MarginContainer" parent="content"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
@@ -79,3 +102,6 @@ theme_override_constants/margin_right = 10
 [node name="price" type="Label" parent="content/price_container"]
 layout_mode = 2
 text = "18000 €"
+
+[connection signal="text_changed" from="content/input_container/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="text_submitted" from="content/input_container/LineEdit" to="." method="_on_line_edit_text_submitted"]
