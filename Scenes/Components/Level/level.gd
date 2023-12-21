@@ -2,15 +2,13 @@ class_name Level
 
 extends Control
 
-var level_data : Dictionary = {
-	"level" : 0,
-	"addition" : ""
-}
+var data : Dictionary = {}
 var locked : bool = true
-signal is_unlocked(col : String, niveau : int)
+signal is_unlocked(level_data)
 
-func init(level : int, price : int, addition):
-	level_data['level'] = level
+func init(level_data):
+	data = level_data
+	var addition = level_data["addition"]
 	if typeof(addition) == TYPE_ARRAY:
 		for add in addition:
 			var sentence = add["sentence"].replace("{value}", str(add["value"]))
@@ -28,10 +26,10 @@ func init(level : int, price : int, addition):
 			$Button/Margin/Unlocked/UnlockedAddition.add_child(l2)
 	
 	# locked
-	find_child('LockedPrice').text = "----- " + str(price) + "€ ----- "
+	find_child('LockedPrice').text = "----- " + str(level_data["price"]) + "€ ----- "
 	
 	#unlocked
-	find_child('UnlockedLevel').text = "Niveau " + str(level)
+	find_child('UnlockedLevel').text = "Niveau " + str(level_data["num"])
 
 
 func _on_button_pressed():
@@ -49,4 +47,4 @@ func unlock():
 	$Button/Margin/Locked.hide()
 	$Button/Margin/Unlocked.show()
 	$Button.self_modulate = "#00FF00"
-	is_unlocked.emit(level_data['level'])
+	is_unlocked.emit(data)
