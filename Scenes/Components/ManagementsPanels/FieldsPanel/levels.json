@@ -7,7 +7,7 @@
 				{
 					"name" : "hop",
 					"value" : 25,
-					"sentence" : "+ {value} tonnes de production de houblon",
+					"sentence" : "{value} tonnes de production de houblon",
 					"type" : "production"
 				},
 				{
@@ -19,7 +19,7 @@
 				{
 					"name" : "humans",
 					"value" : 10,
-					"sentence" : "Besoin de {value} ouvriers supplémantaires",
+					"sentence" : "Besoin de {value} ouvriers",
 					"type" : "need"
 				}
 			]
@@ -43,7 +43,7 @@
 				{
 					"name" : "humans",
 					"value" : 30,
-					"sentence" : "Besoin de {value} ouvriers supplémantaires",
+					"sentence" : "Besoin de {value} ouvriers supplémentaires",
 					"type" : "need"
 				}
 			]
@@ -67,7 +67,7 @@
 				{
 					"name" : "humans",
 					"value" : 30,
-					"sentence" : "Besoin de {value} ouvriers supplémantaires",
+					"sentence" : "Besoin de {value} ouvriers supplémentaires",
 					"type" : "need"
 				}
 			]
@@ -91,7 +91,7 @@
 				{
 					"name" : "humans",
 					"value" : 45,
-					"sentence" : "Besoin de {value} ouvriers supplémantaires",
+					"sentence" : "Besoin de {value} ouvriers supplémentaires",
 					"type" : "need"
 				}
 			]

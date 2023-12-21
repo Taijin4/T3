@@ -19,7 +19,7 @@
 				{
 					"name" : "humans",
 					"value" : 10,
-					"sentence" : "Besoin de {value} ouvriers supplémantaires",
+					"sentence" : "Besoin de {value} ouvriers",
 					"type" : "need"
 				}
 			]
@@ -43,7 +43,7 @@
 				{
 					"name" : "humans",
 					"value" : 30,
-					"sentence" : "Besoin de {value} ouvriers supplémantaires",
+					"sentence" : "Besoin de {value} ouvriers supplémentaires",
 					"type" : "need"
 				}
 			]
@@ -67,7 +67,7 @@
 				{
 					"name" : "humans",
 					"value" : 45,
-					"sentence" : "Besoin de {value} ouvriers supplémantaires",
+					"sentence" : "Besoin de {value} ouvriers supplémentaires",
 					"type" : "need"
 				}
 			]
@@ -91,7 +91,7 @@
 				{
 					"name" : "humans",
 					"value" : 55,
-					"sentence" : "Besoin de {value} ouvriers supplémantaires",
+					"sentence" : "Besoin de {value} ouvriers supplémentaires",
 					"type" : "need"
 				}
 			]
