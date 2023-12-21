@@ -14,9 +14,6 @@ func _on_closing_cross_pressed():
 	hide_panel.emit()
 
 func get_need(type : String = ""):
-	print("brewery")
-	print(need)
-	print(production)
 	if type == "":
 		return need
 	else:
