@@ -2,7 +2,7 @@ extends Node2D
 # main variable
 @onready var money = 15000
 @onready var members = 45
-@onready var materials_cost = {"wood" : 40, "hop" : 80, "ice" : 20, "other" : 10000, "beer" : 200}
+@onready var materials_cost = {"wood" : 40, "hop" : 80, "ice" : 20, "other" : 1000, "beer" : 200}
 @onready var warning = 0
 @onready var round = 1
 
