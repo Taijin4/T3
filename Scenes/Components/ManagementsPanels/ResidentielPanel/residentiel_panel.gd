@@ -3,11 +3,18 @@ extends Control
 signal hide_panel
 signal change_money(sum : int)
 var jsoncontroller = JsonController.new()
-@onready var need = {"humans" : 5, "other" : 10, "beer" : 2}
-@onready var production = {"humans" : 50}
+@onready var need = {"humans" : 0, "other" : 0, "beer" : 0}
+@onready var production = {"humans" : 0}
 
 func _ready():
 	$PanelContainer/VBoxContainer/Content/Ameliorations/LevelsInitiator.init("ResidentielPanel")
+	var tab : Array = jsoncontroller.load_from_file('res://Scenes/Components/ManagementsPanels/ResidentielPanel/levels.json')
+	for val in tab[0][0].get("addition"):
+		print(val.get("type"))
+		if val.get("type") == "production" :
+			production[val.get("name")] = val.get("value")
+		elif val.get("type") == "need" :
+			need[val.get("name")] = val.get("value")
 
 func _on_close_button_pressed():
 	hide_panel.emit()
