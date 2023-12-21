@@ -2,6 +2,9 @@ extends Node2D
 # main variable
 @onready var money = 10000
 @onready var members = 50
+@onready var materials_cost = {"wood" : 70, "hop" : 90, "ice" : 20, "other" : 50, "beer" : 110}
+@onready var warning = 0
+@onready var round = 1
 
 # Panels to show to user several values
 @onready var importation=$UI/Stats/GroupStats/Importation
@@ -32,6 +35,7 @@ func _on_panel_closed():
 		area.enable()
 	$Map.enable()
 	$UI/NextRound.show()
+	update_panels_values()
 
 func _on_panel_opened():
 	for area in $DetectionAreas.get_children():
@@ -71,6 +75,69 @@ func decrease_money(value : int):
 	self.money-=value
 	member_money.set_money(money-value)
 
+func do_export_import(possible_exportation : Dictionary):
+	var import = train_st.get_importation()
+	for value in import:
+		if import[value] != 1:
+			decrease_money(import[value]*materials_cost[value])
+	var export = possible_exportation
+	for value in export:
+		if export[value] != 1:
+			increase_money(export[value]*materials_cost[value])
+
+func min(a : int, b : int):
+	return a if a<b else b
+
+func do_import_members():
+	var place = resident.get_production("humans")
+	var job = get_all_need()["humans"]
+	var max_import = train_st.get_production("humans")
+	if place > members && members < job :
+		members+=max_import if max_import + members < place else min(job, place) - members
+
+func do_need():
+	var storage = {"wood" : 0, "ice" : 0, "hop" : 0, "beer" : 0, "other" : 0}
+	var ressources = train_st.get_importation()
+	var prod = get_all_production()
+	var need = get_all_need()
+	var exp = (train_st.get_exportation()).duplicate(true)
+	#Add all ressources aviable
+	for val in ressources:
+		storage[val] += ressources[val] if ressources[val] != -1 else 0
+	for val in storage:
+		storage[val] += prod[val] if prod[val] != -1 else 0
+	
+	var subsist_need = true
+	#Remove ressources needed or export
+	for val in storage:
+		storage[val] -= need[val] if need[val] != -1 else 0
+		if storage[val] < 0 :
+			storage[val] = 0
+			subsist_need=false
+	if !subsist_need :
+		warning+=1
+	for val in exp:
+		exp[val] = exp[val] if exp[val] < storage[val] else storage[val]
+	do_export_import(exp)
+	var do_warning = false
+	for val in exp :
+		storage[val] -= exp[val] if exp[val] != -1 else 0
+		if storage[val] > 20 :
+			warning+=1
+
+func detect_loose_win():
+	if warning >= 3 :
+		#LOOSE
+		print("IL A PERDU")
+	if round == 10 :
+		print("IL A GANGÉ")
+
+func manage_warning():
+	if round%2 == 0 :
+		warning-=1 if warning > 0 else 0
+	if money < 0 :
+		warning+=1 + (-money/20000)
+
 func update_panels_values():
 	var imp = train_st.get_importation()
 	importation.init("IMPORTATION",imp["wood"],imp["ice"],imp["hop"],imp["beer"],imp["other"])
@@ -83,6 +150,13 @@ func update_panels_values():
 	member_money.init(money,resident.get_production("humans"),members, nee["humans"])
 
 func __on_next_round():
-	decrease_money(3000)
+	round+=1
+	decrease_money(500)
+	do_need()
+	do_import_members()
 	update_panels_values()
-	print("Tour suivant")
+	manage_warning()
+	detect_loose_win()
+	print("Round ",round)
+	
+	
