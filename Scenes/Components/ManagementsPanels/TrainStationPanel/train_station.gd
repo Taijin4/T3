@@ -13,9 +13,6 @@ func _ready():
 	var management_panel = ManagementPanel.new('TrainStationPanel', $PanelContainer/VBoxContainer/Content/Ameliorations/Levels)
 func _on_close_button_pressed():
 	hide_panel.emit()
-	print(need.get("humans"))
-	need["humans"] = 2
-	print(need.get("humans"))
 
 func get_need(type : String = ""):
 	if(type == ""):

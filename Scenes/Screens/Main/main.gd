@@ -43,7 +43,6 @@ func get_all_need():
 	var all = {"wood" : 0, "ice" : 0, "hop" : 0, "beer" : 0, "other" : 0, "humans" : 0}
 	for pan in all_panels:
 		var res = pan.get_need()
-		print(res)
 		all["wood"] += res.get("wood") if res.get("wood") != null else 0
 		all["ice"] += res.get("ice") if res.get("ice") != null else 0
 		all["hop"] += res.get("hop") if res.get("hop") != null else 0
@@ -56,7 +55,6 @@ func get_all_production():
 	var all = {"wood" : 0, "ice" : 0, "hop" : 0, "beer" : 0, "other" : 0, "humans" : 0}
 	for pan in all_panels:
 		var res = pan.get_production()
-		print(res)
 		all["wood"] += res.get("wood") if res.get("wood") != null else 0
 		all["ice"] += res.get("ice") if res.get("ice") != null else 0
 		all["hop"] += res.get("hop") if res.get("hop") != null else 0
