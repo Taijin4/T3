@@ -14,7 +14,6 @@ func _ready():
 
 
 func _on_line_edit_text_submitted(new_text):
-	print(\"new : \" + new_text)
 	if new_text == \"\" or allowed_chars.search(new_text):
 		new_text = \"0\"
 		$content/input_container/LineEdit.text = \"0\"
