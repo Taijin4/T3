@@ -3,9 +3,9 @@ extends Control
 signal hide_panel
 signal change_money(sum : int)
 var jsoncontroller = JsonController.new()
-@onready var need = {"humans" : 5, "other" : 10}
+@onready var need = {"humans" : 0, "other" : 0}
 @onready var production = {"humans" : 50}
-@onready var importation = {"hop" : 0, "ice" : 0, "wood" : 0, "beer" : -1, "other" : 60}
+@onready var importation = {"hop" : 0, "ice" : 0, "wood" : 0, "beer" : -1, "other" : 0}
 @onready var exportation = {"hop" : 0, "ice" : 0, "wood" : 0, "beer" : 0, "other" : -1}
 
 
@@ -76,12 +76,10 @@ func _on_e_text_field_new_text_submitted(type, text):
 
 func _on_levels_initiator_level_unlocked(column, level_data):
 	for addition in level_data["addition"]:
-		if addition["name"] != "other":
-			if addition.has("type"):
-				if addition["type"] == "need":
-					need[addition["name"]] += addition["value"]
-				elif addition["type"] == "production":
-					production[addition["name"]] += addition["value"]
-				else:
-					printerr("YA UN PROBLEME DANS LE JSON CHEF !")
+		if addition.has("type"):
+			if addition["type"] == "need":
+				print(addition["name"])
+				need[addition["name"]] += addition["value"]
+			elif addition["type"] == "production":
+				production[addition["name"]] += addition["value"]
 	change_money.emit(-int(level_data["price"]))

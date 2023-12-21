@@ -105,7 +105,6 @@ func do_need():
 		storage[val] += ressources[val] if ressources[val] != -1 else 0
 	for val in storage:
 		storage[val] += prod[val] if prod[val] != -1 else 0
-	
 	var subsist_need = true
 	var ressources_not_aviable = {"wood" : 0, "ice" : 0, "hop" : 0, "beer" : 0}
 	var problem = false
@@ -157,14 +156,16 @@ func manage_warning():
 		warning+=1 + (-money/20000)
 
 func update_panels_values():
-	var imp = train_st.get_importation()
-	importation.init("IMPORTATION",imp["wood"],imp["ice"],imp["hop"],imp["beer"],imp["other"])
-	var exp = train_st.get_exportation()
-	exportation.init("EXPORTATION",exp["wood"],exp["ice"],exp["hop"],exp["beer"],exp["other"])
 	var nee = get_all_need()
 	local_need.init("BESOINS",nee["wood"],nee["ice"],nee["hop"],nee["beer"],nee["other"])
 	var pro = get_all_production()
 	local_production.init("PRODUCTION",pro["wood"],pro["ice"],pro["hop"],pro["beer"],-1)
+	train_st.set_importation(nee["other"],"other")
+	var imp = train_st.get_importation()
+	importation.init("IMPORTATION",imp["wood"],imp["ice"],imp["hop"],imp["beer"],imp["other"])
+	var exp = train_st.get_exportation()
+	exportation.init("EXPORTATION",exp["wood"],exp["ice"],exp["hop"],exp["beer"],exp["other"])
+
 	member_money.init(money,resident.get_production("humans"),members, nee["humans"])
 
 func __on_next_round():
