@@ -3,9 +3,11 @@ extends VBoxContainer
 signal level_unlocked(column_id : int, level)
 var level_scene_path = preload("res://Scenes/Components/Level/level.tscn")
 var current_level = 0
+var last_turn_level = 0
+var turn = 0
 var column_id : int
 
-func init(data, column_id):
+func init(data, column_id, unlock_first_level = true):
 	for level_data in data:
 		var level_scene = level_scene_path.instantiate()
 		level_scene.init(level_data)
@@ -14,6 +16,9 @@ func init(data, column_id):
 		add_child(level_scene)
 		
 	get_children()[0].enable()
+	if unlock_first_level:
+		get_children()[0]._on_button_pressed()
+		
 	column_id = column_id
 
 func on_level_unlocked(level_data):
