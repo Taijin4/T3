@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://vcyw787rvig7"]
+
+[ext_resource type="Script" path="res://Scenes/Components/LevelInitiator/level_initiator.gd" id="1_himy1"]
+
+[node name="LevelsInitiator" type="HBoxContainer"]
+size_flags_vertical = 3
+script = ExtResource("1_himy1")
