@@ -16,8 +16,8 @@ func init(data, column_id):
 	get_children()[0].enable()
 	column_id = column_id
 
-func on_level_unlocked(column_id : int, level : int):
+func on_level_unlocked(level : int):
 	current_level = level
 	if get_child_count() > level:
 		get_children()[level].enable()
-	level_unlocked.emit(level)
+	level_unlocked.emit(column_id, level)
