@@ -15,49 +15,49 @@ func _on_close_button_pressed():
 	hide_panel.emit()
 
 func get_need(type : String = ""):
-	if(type == ""):
+	if type == "":
 		return need
 	else:
 		return need.get(type)
 
 func get_production(type : String = ""):
-	if(type == ""):
+	if type == "":
 		return production
 	else:
 		return production.get(type)
 
 func get_importation(type : String = ""):
-	if(type == ""):
+	if type == "":
 		return importation
 	else:
 		return importation.get(type)
 
 func get_exportation(type : String = ""):
-	if(type == ""):
+	if type == "":
 		return exportation
 	else:
 		return exportation.get(type)
 
 func set_need(value, type : String = ""):
-	if(type == ""):
+	if type == "":
 		need = value
 	else:
 		need[type] = value
 
 func set_production(value, type : String = ""):
-	if(type == ""):
+	if type == "":
 		production = value
 	else:
 		production[type] = value
 
 func set_importation(value, type : String = ""):
-	if(type == ""):
+	if type == "":
 		importation = value
 	else:
 		importation[type] = value
 
 func set_exportation(value, type : String = ""):
-	if(type == ""):
+	if type == "":
 		exportation = value
 	else:
 		exportation[type] = value
