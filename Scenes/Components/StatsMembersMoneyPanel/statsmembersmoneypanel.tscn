@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cptwvbalrevu4"]
+[gd_scene load_steps=6 format=3 uid="uid://cptwvbalrevu4"]
 
 [ext_resource type="Script" path="res://Scenes/Components/StatsMembersMoneyPanel/statsmembersmoneypanel.gd" id="1_i7jj8"]
 [ext_resource type="Texture2D" uid="uid://b8ygwfexilvc2" path="res://Assets/Images/members.png" id="2_23csp"]
+[ext_resource type="Texture2D" uid="uid://elmw4lgxxj6a" path="res://Assets/Images/employee.png" id="3_2hp5w"]
 [ext_resource type="Texture2D" uid="uid://chhgeqklbgawv" path="res://Assets/Images/money.png" id="3_oxus8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2042a"]
@@ -55,18 +56,6 @@ layout_mode = 2
 texture = ExtResource("2_23csp")
 expand_mode = 3
 
-[node name="MembersMinValue" type="Label" parent="MarginContainer/PanelContainer/PanelWrapper/Content/Members"]
-layout_mode = 2
-size_flags_horizontal = 8
-theme_override_font_sizes/font_size = 15
-text = "--- ---"
-
-[node name="Comparator2" type="Label" parent="MarginContainer/PanelContainer/PanelWrapper/Content/Members"]
-layout_mode = 2
-size_flags_horizontal = 8
-theme_override_font_sizes/font_size = 15
-text = "/"
-
 [node name="MembersValue" type="Label" parent="MarginContainer/PanelContainer/PanelWrapper/Content/Members"]
 layout_mode = 2
 size_flags_horizontal = 8
@@ -80,6 +69,33 @@ theme_override_font_sizes/font_size = 15
 text = "/"
 
 [node name="MembersMaxValue" type="Label" parent="MarginContainer/PanelContainer/PanelWrapper/Content/Members"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 15
+text = "--- ---"
+
+[node name="Job" type="HBoxContainer" parent="MarginContainer/PanelContainer/PanelWrapper/Content"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="JobImage" type="TextureRect" parent="MarginContainer/PanelContainer/PanelWrapper/Content/Job"]
+layout_mode = 2
+texture = ExtResource("3_2hp5w")
+expand_mode = 3
+
+[node name="MembersValue" type="Label" parent="MarginContainer/PanelContainer/PanelWrapper/Content/Job"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 15
+text = "--- ---"
+
+[node name="Comparator" type="Label" parent="MarginContainer/PanelContainer/PanelWrapper/Content/Job"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 15
+text = "/"
+
+[node name="JobValue" type="Label" parent="MarginContainer/PanelContainer/PanelWrapper/Content/Job"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 15
