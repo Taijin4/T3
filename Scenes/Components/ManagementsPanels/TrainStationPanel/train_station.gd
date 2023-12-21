@@ -61,3 +61,12 @@ func set_exportation(value, type : String = ""):
 		exportation = value
 	else:
 		exportation[type] = value
+
+
+func _on_i_text_field_new_text_submitted(type, text):
+	importation[type] = int(text)
+	print(importation)
+
+func _on_e_text_field_new_text_submitted(type, text):
+	exportation[type] = int(text)
+	print(exportation)

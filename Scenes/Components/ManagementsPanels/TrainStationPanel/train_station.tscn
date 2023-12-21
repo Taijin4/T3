@@ -102,14 +102,17 @@ size_flags_vertical = 3
 [node name="TextFieldBois" parent="PanelContainer/VBoxContainer/Content/ChoixFlux/Importation/ImprtQuantite" instance=ExtResource("5_4nu88")]
 layout_mode = 2
 metadata/FieldTitle = "Bois"
+metadata/type = "wood"
 
 [node name="TextFieldHop" parent="PanelContainer/VBoxContainer/Content/ChoixFlux/Importation/ImprtQuantite" instance=ExtResource("5_4nu88")]
 layout_mode = 2
 metadata/FieldTitle = "Houblon"
+metadata/type = "hop"
 
 [node name="TextFieldIce" parent="PanelContainer/VBoxContainer/Content/ChoixFlux/Importation/ImprtQuantite" instance=ExtResource("5_4nu88")]
 layout_mode = 2
 metadata/FieldTitle = "Glace"
+metadata/type = "ice"
 
 [node name="Exportation" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Content/ChoixFlux"]
 layout_mode = 2
@@ -132,13 +135,22 @@ size_flags_vertical = 3
 [node name="TextFieldBois" parent="PanelContainer/VBoxContainer/Content/ChoixFlux/Exportation/ExprtQuantite" instance=ExtResource("5_4nu88")]
 layout_mode = 2
 metadata/FieldTitle = "Bois"
+metadata/type = "wood"
 
 [node name="TextFieldHop" parent="PanelContainer/VBoxContainer/Content/ChoixFlux/Exportation/ExprtQuantite" instance=ExtResource("5_4nu88")]
 layout_mode = 2
 metadata/FieldTitle = "Houblon"
+metadata/type = "hop"
 
 [node name="TextFieldIce" parent="PanelContainer/VBoxContainer/Content/ChoixFlux/Exportation/ExprtQuantite" instance=ExtResource("5_4nu88")]
 layout_mode = 2
 metadata/FieldTitle = "Glace"
+metadata/type = "ice"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Header/ClosingCross" to="." method="_on_close_button_pressed"]
+[connection signal="new_text_submitted" from="PanelContainer/VBoxContainer/Content/ChoixFlux/Importation/ImprtQuantite/TextFieldBois" to="." method="_on_i_text_field_new_text_submitted"]
+[connection signal="new_text_submitted" from="PanelContainer/VBoxContainer/Content/ChoixFlux/Importation/ImprtQuantite/TextFieldHop" to="." method="_on_i_text_field_new_text_submitted"]
+[connection signal="new_text_submitted" from="PanelContainer/VBoxContainer/Content/ChoixFlux/Importation/ImprtQuantite/TextFieldIce" to="." method="_on_i_text_field_new_text_submitted"]
+[connection signal="new_text_submitted" from="PanelContainer/VBoxContainer/Content/ChoixFlux/Exportation/ExprtQuantite/TextFieldBois" to="." method="_on_e_text_field_new_text_submitted"]
+[connection signal="new_text_submitted" from="PanelContainer/VBoxContainer/Content/ChoixFlux/Exportation/ExprtQuantite/TextFieldHop" to="." method="_on_e_text_field_new_text_submitted"]
+[connection signal="new_text_submitted" from="PanelContainer/VBoxContainer/Content/ChoixFlux/Exportation/ExprtQuantite/TextFieldIce" to="." method="_on_e_text_field_new_text_submitted"]
