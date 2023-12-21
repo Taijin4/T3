@@ -6,7 +6,7 @@
 			"addition": [
 				{
 					"name" : "wood",
-					"value" : 100,
+					"value" : 1000,
 					"sentence" : "{value} tonnes de traitement de bois",
 					"type" : "production"
 				},
@@ -30,7 +30,7 @@
 			"addition": [
 				{
 					"name" : "wood",
-					"value" : 400,
+					"value" : 4000,
 					"sentence" : "+ {value} tonnes de traitement de bois",
 					"type" : "production"
 				},
@@ -54,7 +54,7 @@
 			"addition": [
 				{
 					"name" : "wood",
-					"value" : 1200,
+					"value" : 12000,
 					"sentence" : "+ {value} tonnes de traitement de bois",
 					"type" : "production"
 				},
@@ -78,7 +78,7 @@
 			"addition": [
 				{
 					"name" : "wood",
-					"value" : 2000,
+					"value" : 20000,
 					"sentence" : "+ {value} tonnes de traitement de bois",
 					"type" : "production"
 				},

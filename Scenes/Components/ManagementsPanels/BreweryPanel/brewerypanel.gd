@@ -47,9 +47,6 @@ func _on_levels_initiator_level_unlocked(column, level_data):
 				production[addition["name"]] += addition["value"]
 			else:
 				printerr("YA UN PROBLEME DANS LE JSON CHEF !")
-	var prod_beer = production["beer"]
-	need["wood"] = prod_beer * 2
-	need["hop"] = prod_beer / 2
-	need["ice"] = prod_beer / 2
+	
 	
 	change_money.emit(-int(level_data["price"]))

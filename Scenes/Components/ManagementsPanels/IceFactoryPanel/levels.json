@@ -6,7 +6,7 @@
 			"addition": [
 				{
 					"name" : "ice",
-					"value" : 25,
+					"value" : 250,
 					"sentence" : "{value} tonnes de production de glace",
 					"type" : "production"
 				},
@@ -30,7 +30,7 @@
 			"addition": [
 				{
 					"name" : "ice",
-					"value" : 100,
+					"value" : 1000,
 					"sentence" : "{value} tonnes de production de glace",
 					"type" : "production"
 				},
@@ -54,7 +54,7 @@
 			"addition": [
 				{
 					"name" : "ice",
-					"value" : 300,
+					"value" : 3000,
 					"sentence" : "+ {value} tonnes de production de glace",
 					"type" : "production"
 				},
@@ -78,7 +78,7 @@
 			"addition": [
 				{
 					"name" : "ice",
-					"value" : 500,
+					"value" : 5000,
 					"sentence" : "+ {value} tonnes de production de glace",
 					"type" : "production"
 				},
