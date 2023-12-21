@@ -1,7 +1,7 @@
 extends Control
 
 signal hide_panel
-
+var jsoncontroller = JsonController.new()
 @onready var need = {"humans" : 5, "other" : 10}
 @onready var production = {"humans" : 10}
 @onready var importation = {"hop" : 0, "ice" : 0, "wood" : 50, "beer" : -1, "other" : 60}
@@ -10,7 +10,7 @@ signal hide_panel
 
 
 func _ready():
-	var management_panel = ManagementPanel.new('TrainStationPanel', $PanelContainer/VBoxContainer/Content/Ameliorations/Levels)
+	$PanelContainer/VBoxContainer/Content/Ameliorations/LevelsInitiator.init("TrainStationPanel")
 func _on_close_button_pressed():
 	hide_panel.emit()
 
@@ -70,3 +70,17 @@ func _on_i_text_field_new_text_submitted(type, text):
 func _on_e_text_field_new_text_submitted(type, text):
 	exportation[type] = int(text)
 	print(exportation)
+
+
+func _on_levels_initiator_level_unlocked(column, level):
+	var panel_data = jsoncontroller.load_from_file('res://Scenes/Components/ManagementsPanels/TrainStationPanel/levels.json')
+	var level_data = panel_data[column][level-1]
+	for addition in level_data["addition"]:
+		if addition["name"] != "other":
+			if addition.has("type"):
+				if addition["type"] == "need":
+					need[addition["name"]] += addition["value"]
+				elif addition["type"] == "production":
+					production[addition["name"]] += addition["value"]
+				else:
+					printerr("YA UN PROBLEME DANS LE JSON CHEF !")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnn5cug8cayt0"]
+[gd_scene load_steps=7 format=3 uid="uid://dnn5cug8cayt0"]
 
 [ext_resource type="Script" path="res://Scenes/Components/ManagementsPanels/TrainStationPanel/train_station.gd" id="1_me354"]
 [ext_resource type="PackedScene" uid="uid://lcmk3kahmkxi" path="res://Scenes/Components/ClosingCross/closing_cross.tscn" id="4_126fe"]
+[ext_resource type="PackedScene" uid="uid://vcyw787rvig7" path="res://Scenes/Components/LevelInitiator/level_initiator.tscn" id="4_afj5w"]
 [ext_resource type="Theme" uid="uid://hxwshs2g0gyx" path="res://Themes/header_management_panel.tres" id="4_q7t3w"]
 [ext_resource type="PackedScene" uid="uid://d2puo204y0gqx" path="res://Scenes/Components/TextField/TextField.tscn" id="5_4nu88"]
 
@@ -73,9 +74,8 @@ theme = ExtResource("4_q7t3w")
 text = "AMELIORATIONS"
 horizontal_alignment = 1
 
-[node name="Levels" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Content/Ameliorations"]
+[node name="LevelsInitiator" parent="PanelContainer/VBoxContainer/Content/Ameliorations" instance=ExtResource("4_afj5w")]
 layout_mode = 2
-size_flags_vertical = 3
 
 [node name="ChoixFlux" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Content"]
 layout_mode = 2
@@ -148,6 +148,7 @@ metadata/FieldTitle = "Glace"
 metadata/type = "ice"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Header/ClosingCross" to="." method="_on_close_button_pressed"]
+[connection signal="level_unlocked" from="PanelContainer/VBoxContainer/Content/Ameliorations/LevelsInitiator" to="." method="_on_levels_initiator_level_unlocked"]
 [connection signal="new_text_submitted" from="PanelContainer/VBoxContainer/Content/ChoixFlux/Importation/ImprtQuantite/TextFieldBois" to="." method="_on_i_text_field_new_text_submitted"]
 [connection signal="new_text_submitted" from="PanelContainer/VBoxContainer/Content/ChoixFlux/Importation/ImprtQuantite/TextFieldHop" to="." method="_on_i_text_field_new_text_submitted"]
 [connection signal="new_text_submitted" from="PanelContainer/VBoxContainer/Content/ChoixFlux/Importation/ImprtQuantite/TextFieldIce" to="." method="_on_i_text_field_new_text_submitted"]

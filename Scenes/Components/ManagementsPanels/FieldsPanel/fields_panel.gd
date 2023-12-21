@@ -1,12 +1,12 @@
 extends Control
 
 signal hide_panel
-
+var jsoncontroller = JsonController.new()
 @onready var need = {"humans" : 10, "other" : 10}
 @onready var production = {"hop" : 25}
 
 func _ready():
-	var management_panel = ManagementPanel.new('FieldsPanel', $PanelContainer/VBoxContainer/Content/Ameliorations/Levels)
+	$PanelContainer/VBoxContainer/Content/Ameliorations/LevelsInitiator.init("FieldsPanel")
 	
 
 
@@ -36,3 +36,16 @@ func set_production(value, type : String = ""):
 		production = value
 	else:
 		production[type] = value
+
+
+func _on_levels_initiator_level_unlocked(column, level):
+	var panel_data = jsoncontroller.load_from_file('res://Scenes/Components/ManagementsPanels/FieldsPanel/levels.json')
+	var level_data = panel_data[column][level-1]
+	for addition in level_data["addition"]:
+		if addition["name"] != "other":
+			if addition["type"] == "need":
+				need[addition["name"]] += addition["value"]
+			elif addition["type"] == "production":
+				production[addition["name"]] += addition["value"]
+			else:
+				printerr("YA UN PROBLEME DANS LE JSON CHEF !")

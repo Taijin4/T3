@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://7n2d63pnxrad"]
+[gd_scene load_steps=6 format=3 uid="uid://7n2d63pnxrad"]
 
 [ext_resource type="Script" path="res://Scenes/Components/ManagementsPanels/BreweryPanel/brewerypanel.gd" id="1_ehieo"]
 [ext_resource type="PackedScene" uid="uid://lcmk3kahmkxi" path="res://Scenes/Components/ClosingCross/closing_cross.tscn" id="2_ncsst"]
 [ext_resource type="Theme" uid="uid://hxwshs2g0gyx" path="res://Themes/header_management_panel.tres" id="3_wqwmk"]
+[ext_resource type="PackedScene" uid="uid://vcyw787rvig7" path="res://Scenes/Components/LevelInitiator/level_initiator.tscn" id="4_34pbg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5av4"]
 content_margin_left = 20.0
@@ -72,8 +73,8 @@ theme = ExtResource("3_wqwmk")
 text = "AMELIORATIONS"
 horizontal_alignment = 1
 
-[node name="Levels" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Content/Ameliorations"]
+[node name="LevelsInitiator" parent="PanelContainer/VBoxContainer/Content/Ameliorations" instance=ExtResource("4_34pbg")]
 layout_mode = 2
-size_flags_vertical = 3
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Header/ClosingCross" to="." method="_on_closing_cross_pressed"]
+[connection signal="level_unlocked" from="PanelContainer/VBoxContainer/Content/Ameliorations/LevelsInitiator" to="." method="_on_levels_initiator_level_unlocked"]
