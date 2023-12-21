@@ -108,29 +108,30 @@ func do_need():
 	
 	var subsist_need = true
 	var ressources_not_aviable = {"wood" : 0, "ice" : 0, "hop" : 0, "beer" : 0}
+	var problem = false
 	#Remove ressources needed or export
 	for val in storage:
 		storage[val] -= need[val] if need[val] != -1 else 0
 		if storage[val] < 0 :
 			ressources_not_aviable[val] += -storage[val]
+			problem = true
 			subsist_need=false
-	var available = (brewery.get_need()).duplicate(true)
-	available.erase("humans")
-	available.erase("other")
-	print("STORAGE",storage)
-	print("NOT AVAILABLE",ressources_not_aviable)
-	for val in available :
-		available[val] -= ressources_not_aviable[val]
-	var missing_beer = brewery.get_production("beer") - min(available["wood"]/2,min(available["ice"]*2,available["hop"]*2))
-	storage["beer"] -= missing_beer
-	storage["wood"] += missing_beer*2
-	storage["ice"] += missing_beer*0.5
-	storage["hop"] += missing_beer*0.5
-	if storage["beer"] < 0 :
-		storage["beer"] = 0
-		members = members/2 if members/2 < 10 else members-10
-		subsist_need=false
-	print("STORAGE",storage)
+	if problem :
+		var available = (brewery.get_need()).duplicate(true)
+		available.erase("humans")
+		available.erase("other")
+		for val in available :
+			available[val] -= ressources_not_aviable[val]
+		var missing_beer = brewery.get_production("beer") - min(available["wood"]/2,min(available["ice"]*2,available["hop"]*2))
+		print(missing_beer)
+		storage["beer"] -= missing_beer
+		storage["wood"] += missing_beer*2
+		storage["ice"] += missing_beer*0.5
+		storage["hop"] += missing_beer*0.5
+		if storage["beer"] < 0 :
+			storage["beer"] = 0
+			members = members/2 if members/2 < 10 else members-10
+			subsist_need=false
 	if !subsist_need :
 		warning+=1
 	for val in exp:
@@ -174,5 +175,3 @@ func __on_next_round():
 	manage_warning()
 	detect_loose_win()
 	print("Round ",round)
-	
-	
