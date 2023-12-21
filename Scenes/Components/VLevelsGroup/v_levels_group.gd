@@ -1,6 +1,6 @@
 extends VBoxContainer
 
-
+signal level_unlocked(level : int)
 var level_scene_path = preload("res://Scenes/Components/Level/level.tscn")
 var current_level = 0
 
@@ -14,7 +14,8 @@ func init(data):
 		
 	get_children()[0].enable()
 
-func on_level_unlocked(niveau : int):
-	current_level = niveau
-	if get_child_count() > niveau:
-		get_children()[niveau].enable()
+func on_level_unlocked(level : int):
+	current_level = level
+	if get_child_count() > level:
+		get_children()[level].enable()
+	level_unlocked.emit(level)
