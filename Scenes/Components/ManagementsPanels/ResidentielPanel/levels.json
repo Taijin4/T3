@@ -15,6 +15,12 @@
 					"value" : 15,
 					"sentence" : "",
 					"type" : "need"
+				},
+				{
+					"name" : "beer",
+					"value" : 80,
+					"sentence" : "Besoin de {value} litres de bières pour les habitants",
+					"type" : "need"
 				}
 			]
 		},
@@ -32,6 +38,12 @@
 					"name" : "other",
 					"value" : 40,
 					"sentence" : "",
+					"type" : "need"
+				},
+				{
+					"name" : "beer",
+					"value" : 280,
+					"sentence" : "Besoin de {value} litres supplémentaires de bières pour les habitants",
 					"type" : "need"
 				}
 			]
@@ -51,6 +63,12 @@
 					"value" : 60,
 					"sentence" : "",
 					"type" : "need"
+				},
+				{
+					"name" : "beer",
+					"value" : 440,
+					"sentence" : "Besoin de {value} litres supplémentaires de bières pour les habitants",
+					"type" : "need"
 				}
 			]
 		},
@@ -68,6 +86,12 @@
 					"name" : "other",
 					"value" : 75,
 					"sentence" : "",
+					"type" : "need"
+				},
+				{
+					"name" : "beer",
+					"value" : 560,
+					"sentence" : "Besoin de {value} litres supplémentaires de bières pour les habitants",
 					"type" : "need"
 				}
 			]
