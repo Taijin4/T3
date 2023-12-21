@@ -147,6 +147,11 @@ layout_mode = 2
 metadata/FieldTitle = "Glace"
 metadata/type = "ice"
 
+[node name="TextFieldBeer" parent="PanelContainer/VBoxContainer/Content/ChoixFlux/Exportation/ExprtQuantite" instance=ExtResource("5_4nu88")]
+layout_mode = 2
+metadata/FieldTitle = "Bière"
+metadata/type = "beer"
+
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Header/ClosingCross" to="." method="_on_close_button_pressed"]
 [connection signal="level_unlocked" from="PanelContainer/VBoxContainer/Content/Ameliorations/LevelsInitiator" to="." method="_on_levels_initiator_level_unlocked"]
 [connection signal="new_text_submitted" from="PanelContainer/VBoxContainer/Content/ChoixFlux/Importation/ImprtQuantite/TextFieldBois" to="." method="_on_i_text_field_new_text_submitted"]
@@ -155,3 +160,4 @@ metadata/type = "ice"
 [connection signal="new_text_submitted" from="PanelContainer/VBoxContainer/Content/ChoixFlux/Exportation/ExprtQuantite/TextFieldBois" to="." method="_on_e_text_field_new_text_submitted"]
 [connection signal="new_text_submitted" from="PanelContainer/VBoxContainer/Content/ChoixFlux/Exportation/ExprtQuantite/TextFieldHop" to="." method="_on_e_text_field_new_text_submitted"]
 [connection signal="new_text_submitted" from="PanelContainer/VBoxContainer/Content/ChoixFlux/Exportation/ExprtQuantite/TextFieldIce" to="." method="_on_e_text_field_new_text_submitted"]
+[connection signal="new_text_submitted" from="PanelContainer/VBoxContainer/Content/ChoixFlux/Exportation/ExprtQuantite/TextFieldBeer" to="." method="_on_e_text_field_new_text_submitted"]

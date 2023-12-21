@@ -6,7 +6,7 @@
 			"addition": [
 				{
 					"name" : "materials",
-					"value" : 200,
+					"value" : 6000,
 					"sentence" : "+ {value} tonnes d'importation de matériaux"
 				},
 				{
@@ -29,7 +29,7 @@
 			"addition": [
 				{
 					"name" : "materials",
-					"value" : 500,
+					"value" : 18000,
 					"sentence" : "+ {value} tonnes d'importation de matériaux"
 				},
 				{
@@ -52,7 +52,7 @@
 			"addition": [
 				{
 					"name" : "materials",
-					"value" : 1000,
+					"value" : 30000,
 					"sentence" : "+ {value} tonnes d'importation de matériaux"
 				},
 				{
@@ -77,7 +77,7 @@
 			"addition": [
 				{
 					"name" : "materials",
-					"value" : 200,
+					"value" : 6000,
 					"sentence" : "+ {value} tonnes d'exportation de matériaux"
 				},
 				{
@@ -100,7 +100,7 @@
 			"addition": [
 				{
 					"name" : "materials",
-					"value" : 500,
+					"value" : 18000,
 					"sentence" : "+ {value} tonnes d'exportation de matériaux"
 				},
 				{
@@ -123,7 +123,7 @@
 			"addition": [
 				{
 					"name" : "materials",
-					"value" : 1000,
+					"value" : 30000,
 					"sentence" : "+ {value} tonnes d'exportation de matériaux"
 				},
 				{

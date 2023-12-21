@@ -1,0 +1,142 @@
+[gd_scene load_steps=8 format=3 uid="uid://4bpuy77tb4ve"]
+
+[ext_resource type="Script" path="res://Scenes/Screens/EndScreen/end_screen.gd" id="1_5s77s"]
+[ext_resource type="Texture2D" uid="uid://chhgeqklbgawv" path="res://Assets/Images/money.png" id="2_meg07"]
+[ext_resource type="Texture2D" uid="uid://b8ygwfexilvc2" path="res://Assets/Images/members.png" id="3_o7baj"]
+[ext_resource type="Texture2D" uid="uid://da3nyse1r7y76" path="res://Assets/Images/beer.png" id="4_bsaw1"]
+[ext_resource type="Texture2D" uid="uid://bv7ajahhu3j37" path="res://Assets/Images/ice-cube.png" id="5_m3rqp"]
+[ext_resource type="Texture2D" uid="uid://cjjaasi1ndpxn" path="res://Assets/Images/houblon.png" id="6_vx26f"]
+[ext_resource type="Texture2D" uid="uid://cspnbbet7dg2j" path="res://Assets/Images/wood.png" id="7_wrek2"]
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_5s77s")
+
+[node name="Container" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Sentences" type="VBoxContainer" parent="Container/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="VictoryLabel" type="Label" parent="Container/VBoxContainer/Sentences"]
+modulate = Color(0.498039, 0.811765, 0, 1)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SentenceLabel" type="Label" parent="Container/VBoxContainer/Sentences"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Container/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Columns" type="HBoxContainer" parent="Container/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FirstColumn" type="VBoxContainer" parent="Container/VBoxContainer/MarginContainer/Columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MoneyContainer" type="HBoxContainer" parent="Container/VBoxContainer/MarginContainer/Columns/FirstColumn"]
+layout_mode = 2
+
+[node name="money" type="TextureRect" parent="Container/VBoxContainer/MarginContainer/Columns/FirstColumn/MoneyContainer"]
+layout_mode = 2
+texture = ExtResource("2_meg07")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Container/VBoxContainer/MarginContainer/Columns/FirstColumn/MoneyContainer"]
+layout_mode = 2
+text = "tfygnhjiugyfutrhunugiyuibuhnuobgiyuvft"
+
+[node name="FirstColumnMargin" type="MarginContainer" parent="Container/VBoxContainer/MarginContainer/Columns/FirstColumn"]
+layout_mode = 2
+
+[node name="HumansContainer" type="HBoxContainer" parent="Container/VBoxContainer/MarginContainer/Columns/FirstColumn/FirstColumnMargin"]
+layout_mode = 2
+
+[node name="humans" type="TextureRect" parent="Container/VBoxContainer/MarginContainer/Columns/FirstColumn/FirstColumnMargin/HumansContainer"]
+layout_mode = 2
+texture = ExtResource("3_o7baj")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Container/VBoxContainer/MarginContainer/Columns/FirstColumn/FirstColumnMargin/HumansContainer"]
+layout_mode = 2
+text = "tytrgtrgrdghtr"
+
+[node name="BeerContainer" type="HBoxContainer" parent="Container/VBoxContainer/MarginContainer/Columns/FirstColumn"]
+layout_mode = 2
+
+[node name="beer" type="TextureRect" parent="Container/VBoxContainer/MarginContainer/Columns/FirstColumn/BeerContainer"]
+layout_mode = 2
+texture = ExtResource("4_bsaw1")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Container/VBoxContainer/MarginContainer/Columns/FirstColumn/BeerContainer"]
+layout_mode = 2
+
+[node name="SecondColumn" type="VBoxContainer" parent="Container/VBoxContainer/MarginContainer/Columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="IceContainer" type="HBoxContainer" parent="Container/VBoxContainer/MarginContainer/Columns/SecondColumn"]
+layout_mode = 2
+
+[node name="ice" type="TextureRect" parent="Container/VBoxContainer/MarginContainer/Columns/SecondColumn/IceContainer"]
+layout_mode = 2
+texture = ExtResource("5_m3rqp")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Container/VBoxContainer/MarginContainer/Columns/SecondColumn/IceContainer"]
+layout_mode = 2
+text = "dgtfgyuihinj,oihoyurdtfuhyj"
+
+[node name="SecondColumnMargin" type="MarginContainer" parent="Container/VBoxContainer/MarginContainer/Columns/SecondColumn"]
+layout_mode = 2
+
+[node name="HopContainer" type="HBoxContainer" parent="Container/VBoxContainer/MarginContainer/Columns/SecondColumn/SecondColumnMargin"]
+layout_mode = 2
+
+[node name="hop" type="TextureRect" parent="Container/VBoxContainer/MarginContainer/Columns/SecondColumn/SecondColumnMargin/HopContainer"]
+layout_mode = 2
+texture = ExtResource("6_vx26f")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Container/VBoxContainer/MarginContainer/Columns/SecondColumn/SecondColumnMargin/HopContainer"]
+layout_mode = 2
+
+[node name="WoodContainer" type="HBoxContainer" parent="Container/VBoxContainer/MarginContainer/Columns/SecondColumn"]
+layout_mode = 2
+
+[node name="wood" type="TextureRect" parent="Container/VBoxContainer/MarginContainer/Columns/SecondColumn/WoodContainer"]
+layout_mode = 2
+texture = ExtResource("7_wrek2")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Container/VBoxContainer/MarginContainer/Columns/SecondColumn/WoodContainer"]
+layout_mode = 2
