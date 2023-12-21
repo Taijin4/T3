@@ -114,7 +114,7 @@ func do_need():
 		if storage[val] < 0 :
 			ressources_not_aviable[val] += -storage[val]
 			subsist_need=false
-	var available = brewery.get_need()
+	var available = (brewery.get_need()).duplicate(true)
 	available.erase("humans")
 	available.erase("other")
 	print("STORAGE",storage)
