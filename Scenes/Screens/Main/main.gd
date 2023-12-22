@@ -147,8 +147,16 @@ func detect_loose_win():
 	if warning >= 3 :
 		#LOOSE
 		print("IL A PERDU")
+		var pro = get_all_production()
+		$UI/EndScreen.init(false, self.money, self.members, pro["beer"],pro["ice"],pro["wood"],pro["hop"])
+		$UI/EndScreen.show()
 	if round == 10 :
 		print("IL A GANGÉ")
+		var pro = get_all_production()
+		$UI/EndScreen.init(true, self.money, self.members, pro["beer"],pro["ice"],pro["wood"],pro["hop"])
+		$UI/EndScreen.show()
+	
+	
 
 func manage_warning():
 	if round%2 == 0 :
