@@ -24,3 +24,8 @@ func _on_line_edit_text_submitted(new_text):
 	else:
 		set_price(materials_cost[get_meta("type")]*int(new_text), get_meta("Prefix"))
 		new_text_submitted.emit(get_meta("type"), new_text)
+
+
+
+func _on_line_edit_focus_exited():
+	_on_line_edit_text_submitted($content/input_container/LineEdit.text)
