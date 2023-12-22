@@ -193,6 +193,18 @@ func update_panels_values():
 
 	member_money.init(money,resident.get_production("humans"),members, nee["humans"])
 
+func reset_default_values():
+	for val in all_panels:
+		val.init()
+	money = 15000
+	members = 45
+	materials_cost = {"wood" : 40, "hop" : 80, "ice" : 20, "other" : 500, "beer" : 200}
+	warning = 0
+	round_nbr = 1
+	update_panels_values()
+	enable_events()
+	$UI/EndScreen.hide()
+
 func __on_next_round():
 	round_nbr+=1
 	do_import_members()

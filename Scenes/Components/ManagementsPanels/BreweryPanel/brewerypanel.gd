@@ -12,6 +12,9 @@ var is_stoped = false
 
 func _ready():
 	$PanelContainer/VBoxContainer/Content/Ameliorations/LevelsInitiator.init("BreweryPanel")
+	init()
+
+func init():
 	var tab : Array = jsoncontroller.load_from_file('res://Scenes/Components/ManagementsPanels/BreweryPanel/levels.json')
 	for val in tab[0][0].get("addition"):
 		if val.get("type") == "production" :
