@@ -6,8 +6,8 @@ var jsoncontroller = JsonController.new()
 
 @onready var need = {"humans" : 0, "other" : 0, "hop" : 0, "ice" : 0, "wood" : 0}
 @onready var production = {"beer" : 0}
-@onready var old_need = {"humans" : 0, "other" : 0}
-@onready var old_prod = {"wood" : 0}
+@onready var old_need = {"humans" : 0, "other" : 0, "hop" : 0, "ice" : 0, "wood" : 0}
+@onready var old_prod = {"beer" : 0}
 var is_stoped = false
 
 func _ready():
@@ -62,8 +62,8 @@ func _on_stop_prod_pressed():
 		is_stoped = true
 		old_need = need
 		old_prod = production
-		need = {"humans" : 0, "other" : 0}
-		production = {"wood" : 0}
+		need = {"humans" : 0, "other" : 0, "hop" : 0, "ice" : 0, "wood" : 0}
+		production = {"beer" : 0}
 		$PanelContainer/VBoxContainer/Header/MarginContainer/StopProd.hide()
 		$PanelContainer/VBoxContainer/Header/MarginContainer/StartProd.show()
 	

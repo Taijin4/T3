@@ -101,7 +101,9 @@ func do_import_members():
 	var there_is_place = members < place
 	var there_is_job = members < job
 	if there_is_job and there_is_place:
-		members += min(max_import,min(job-members, place-members))#min(job-members, place-members) if min(job-members, place-members) > max_import else max_import
+		members += min(max_import,min(job-members, place-members))
+	elif !there_is_job :
+		members=job
 
 func do_need():
 	var storage = {"wood" : 0, "ice" : 0, "hop" : 0, "beer" : 0, "other" : 0}
@@ -145,7 +147,7 @@ func do_need():
 	if !subsist_need :
 		print("Tu ne peux pas subvenir aux besoin de ta population ! Tu gagne 1 warning.")
 		warning+=1 #Impossible de sibvenir aux besoins de la population
-		members = members/2 if members/2 < 10 else members-10
+		members = members/2 if members/2 > 10 else members-10 if members-10 > 0 else 0
 	for val in export:
 		export[val] = export[val] if export[val] < storage[val] else storage[val]
 	do_export_import(export)
