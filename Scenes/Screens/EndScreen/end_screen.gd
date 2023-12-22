@@ -19,6 +19,7 @@ extends Control
 @onready var columns_margins = $PanelContainer/Container/VBoxContainer/MarginContainer
 @onready var first_column_margin = $PanelContainer/Container/VBoxContainer/MarginContainer/Columns/FirstColumn/FirstColumnMargin
 @onready var second_column_margin = $PanelContainer/Container/VBoxContainer/MarginContainer/Columns/SecondColumn/SecondColumnMargin
+@onready var replay_button_margin = $PanelContainer/Container/VBoxContainer/MarginContainer/Columns/SecondColumn/WoodContainer/MarginContainer
 
 #var money = "10 525"
 #var humans = "150/160"
@@ -68,3 +69,4 @@ func init(is_game_won, money = -1, humans = -1, beer = -1, ice = -1, wood = -1, 
 	hop_label.add_theme_font_size_override("font_size", 50)
 	wood_label.text = str(wood)
 	wood_label.add_theme_font_size_override("font_size", 50)
+	replay_button_margin.add_theme_constant_override("margin_left", 250)

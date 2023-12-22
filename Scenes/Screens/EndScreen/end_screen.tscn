@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://4bpuy77tb4ve"]
+[gd_scene load_steps=10 format=3 uid="uid://4bpuy77tb4ve"]
 
 [ext_resource type="Script" path="res://Scenes/Screens/EndScreen/end_screen.gd" id="1_5s77s"]
 [ext_resource type="Texture2D" uid="uid://chhgeqklbgawv" path="res://Assets/Images/money.png" id="2_meg07"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bv7ajahhu3j37" path="res://Assets/Images/ice-cube.png" id="5_m3rqp"]
 [ext_resource type="Texture2D" uid="uid://cjjaasi1ndpxn" path="res://Assets/Images/houblon.png" id="6_vx26f"]
 [ext_resource type="Texture2D" uid="uid://cspnbbet7dg2j" path="res://Assets/Images/wood.png" id="7_wrek2"]
+[ext_resource type="Texture2D" uid="uid://10pigf6yf67j" path="res://Assets/Images/reset_arrow.png" id="8_jy2l2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7n1xv"]
 bg_color = Color(0, 0, 0, 0.329412)
@@ -145,3 +146,11 @@ expand_mode = 3
 
 [node name="Label" type="Label" parent="PanelContainer/Container/VBoxContainer/MarginContainer/Columns/SecondColumn/WoodContainer"]
 layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/Container/VBoxContainer/MarginContainer/Columns/SecondColumn/WoodContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/Container/VBoxContainer/MarginContainer/Columns/SecondColumn/WoodContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("8_jy2l2")
+expand_mode = 2
