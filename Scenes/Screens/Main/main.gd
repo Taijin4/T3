@@ -4,7 +4,7 @@ extends Node2D
 @onready var members = 45
 @onready var materials_cost = {"wood" : 40, "hop" : 80, "ice" : 20, "other" : 1000, "beer" : 200}
 @onready var warning = 0
-@onready var round = 1
+@onready var round_nbr = 1
 
 # Panels to show to user several values
 @onready var importation=$UI/Stats/GroupStats/Importation
@@ -105,7 +105,7 @@ func do_need():
 	var ressources = train_st.get_importation()
 	var prod = get_all_production()
 	var need = get_all_need()
-	var exp = (train_st.get_exportation()).duplicate(true)
+	var export = (train_st.get_exportation()).duplicate(true)
 	#Add all ressources aviable
 	for val in ressources:
 		storage[val] += ressources[val] if ressources[val] != -1 else 0
@@ -138,26 +138,28 @@ func do_need():
 			storage["beer"] = 0
 			subsist_need=false
 	if !subsist_need :
+		print("Tu ne peux pas subvenir aux besoin de ta population ! Tu gagne 1 warning.")
 		warning+=1 #Impossible de sibvenir aux besoins de la population
 		members = members/2 if members/2 < 10 else members-10
-	for val in exp:
-		exp[val] = exp[val] if exp[val] < storage[val] else storage[val]
-	do_export_import(exp)
-	var do_warning = false
-	for val in exp :
-		storage[val] -= exp[val] if exp[val] != -1 else 0
+	for val in export:
+		export[val] = export[val] if export[val] < storage[val] else storage[val]
+	do_export_import(export)
+	for val in export :
+		storage[val] -= export[val] if export[val] != -1 else 0
 		if storage[val] > 20 :
+			print("Tu gaspille des materiaux ! Tu gagne 1 warning.")
 			warning+=1 #Reste de matières dans le stock
 
 func detect_loose_win():
 	if warning >= 3 :
 		#LOOSE
 		print("IL A PERDU")
+		print("Tu as " + str(warning) + " warnings.")
 		var pro = get_all_production()
 		disable_events()
 		$UI/EndScreen.init(false, self.money, self.members, pro["beer"],pro["ice"],pro["wood"],pro["hop"])
 		$UI/EndScreen.show()
-	if round == 10 :
+	if round_nbr == 10 :
 		print("IL A GANGÉ")
 		var pro = get_all_production()
 		disable_events()
@@ -167,10 +169,11 @@ func detect_loose_win():
 	
 
 func manage_warning():
-	if round%2 == 0 :
+	if round_nbr%2 == 0 :
 		warning-=1 if warning > 0 else 0
 	if money < 0 :
 		warning+=1 + (-money/20000) #Compte dans le négatif
+		print("Argent en négatif. Tu gagnes " + str(1 + (-money/20000)) + " warnings")
 
 func update_panels_values():
 	var nee = get_all_need()
@@ -180,16 +183,16 @@ func update_panels_values():
 	train_st.set_importation(nee["other"],"other")
 	var imp = train_st.get_importation()
 	importation.init("IMPORTATION",imp["wood"],imp["ice"],imp["hop"],imp["beer"],imp["other"])
-	var exp = train_st.get_exportation()
-	exportation.init("EXPORTATION",exp["wood"],exp["ice"],exp["hop"],exp["beer"],exp["other"])
+	var export = train_st.get_exportation()
+	exportation.init("EXPORTATION",export["wood"],export["ice"],export["hop"],export["beer"],export["other"])
 
 	member_money.init(money,resident.get_production("humans"),members, nee["humans"])
 
 func __on_next_round():
-	round+=1
+	round_nbr+=1
 	do_need()
 	do_import_members()
 	update_panels_values()
 	manage_warning()
 	detect_loose_win()
-	print("Round ",round)
+	print("Round ",round_nbr)
