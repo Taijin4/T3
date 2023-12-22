@@ -2,7 +2,7 @@ extends Node2D
 # main variable
 @onready var money = 15000
 @onready var members = 45
-@onready var materials_cost = {"wood" : 40, "hop" : 80, "ice" : 20, "other" : 1000, "beer" : 200}
+@onready var materials_cost = {"wood" : 40, "hop" : 80, "ice" : 20, "other" : 500, "beer" : 200}
 @onready var warning = 0
 @onready var round_nbr = 1
 
@@ -97,8 +97,11 @@ func do_import_members():
 	var place = resident.get_production("humans")
 	var job = get_all_need()["humans"]
 	var max_import = train_st.get_production("humans")
-	if place > members && members < job :
-		members+=max_import if max_import + members < place else min(job, place) - members
+	
+	var there_is_place = members < place
+	var there_is_job = members < job
+	if there_is_job and there_is_place:
+		members += min(max_import,min(job-members, place-members))#min(job-members, place-members) if min(job-members, place-members) > max_import else max_import
 
 func do_need():
 	var storage = {"wood" : 0, "ice" : 0, "hop" : 0, "beer" : 0, "other" : 0}
@@ -106,19 +109,21 @@ func do_need():
 	var prod = get_all_production()
 	var need = get_all_need()
 	var export = (train_st.get_exportation()).duplicate(true)
+	var coef_present_members=(members*100/member_money.get_job_value())
+	var coef_production=coef_present_members if coef_present_members < 100 else 100
 	#Add all ressources aviable
 	for val in ressources:
 		storage[val] += ressources[val] if ressources[val] != -1 else 0
-	var coef_present_members=(members*100/member_money.get_job_value())
+	
 	for val in storage:
-		storage[val] += ((prod[val]*coef_present_members)/100) if prod[val] != -1 else 0
+		storage[val] += ((prod[val]*coef_production)/100) if prod[val] != -1 else 0
 	#Remove ressources needed or export
 	var subsist_need = true
 	var ressources_not_aviable = {"wood" : 0, "ice" : 0, "hop" : 0, "beer" : 0}
 	var problem = false
 	
 	for val in storage:
-		storage[val] -= need[val] if need[val] != -1 else 0
+		storage[val] -= ((need[val]*coef_production)/100) if need[val] != -1 else 0
 		if storage[val] < 0 :
 			ressources_not_aviable[val] += -storage[val]
 			problem = true
@@ -146,8 +151,8 @@ func do_need():
 	do_export_import(export)
 	for val in export :
 		storage[val] -= export[val] if export[val] != -1 else 0
-		if storage[val] > 20 :
-			print("Tu gaspille des materiaux ! Tu gagne 1 warning.")
+		if storage[val] > 100 :
+			print("Tu gaspille des ",val," ! Tu gagne 1 warning.")
 			warning+=1 #Reste de matières dans le stock
 
 func detect_loose_win():
@@ -190,8 +195,8 @@ func update_panels_values():
 
 func __on_next_round():
 	round_nbr+=1
-	do_need()
 	do_import_members()
+	do_need()
 	update_panels_values()
 	manage_warning()
 	detect_loose_win()
