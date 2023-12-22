@@ -4,13 +4,17 @@
 script/source = "extends Control
 signal new_text_submitted(type : String, text : String)
 var allowed_chars = RegEx.new()
-
+@onready var materials_cost = {\"wood\" : 40, \"hop\" : 80, \"ice\" : 20, \"other\" : 1000, \"beer\" : 200}
 
 func _ready():
 	$content/title_container/title.text = get_meta(\"FieldTitle\")
 	allowed_chars.compile(\"[^0-9]\")
 	$content/input_container/LineEdit.text = \"0\"
+	set_price(0, get_meta(\"Prefix\"))
 
+
+func set_price(new_price : int, prefix : String):
+	$content/price_container/price.text = prefix + \" \" + str(new_price) + \"€\"
 
 
 func _on_line_edit_text_submitted(new_text):
@@ -18,6 +22,7 @@ func _on_line_edit_text_submitted(new_text):
 		new_text = \"0\"
 		$content/input_container/LineEdit.text = \"0\"
 	else:
+		set_price(materials_cost[get_meta(\"type\")]*int(new_text), get_meta(\"Prefix\"))
 		new_text_submitted.emit(get_meta(\"type\"), new_text)
 "
 
@@ -42,6 +47,7 @@ script = SubResource("GDScript_04ssy")
 metadata/FieldTitle = ""
 metadata/_edit_use_anchors_ = true
 metadata/type = ""
+metadata/Prefix = ""
 
 [node name="content" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -50,7 +56,6 @@ anchor_right = 1.0
 offset_bottom = 38.0
 grow_horizontal = 2
 size_flags_vertical = 3
-alignment = 1
 
 [node name="title_container" type="PanelContainer" parent="content"]
 custom_minimum_size = Vector2(150, 0)
@@ -70,27 +75,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_hnt1q")
 
-[node name="input" type="TextEdit" parent="content/input_container"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_colors/background_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_placeholder_color = Color(0.588235, 0.588235, 0.588235, 1)
-theme_override_colors/caret_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-placeholder_text = "Entrez un nombre"
-context_menu_enabled = false
-shortcut_keys_enabled = false
-drag_and_drop_selection_enabled = false
-caret_multiple = false
-
 [node name="LineEdit" type="LineEdit" parent="content/input_container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 placeholder_text = "Entrez un nombre"
-max_length = 15
+max_length = 10
 flat = true
 
 [node name="price_container" type="MarginContainer" parent="content"]
@@ -100,7 +89,8 @@ theme_override_constants/margin_right = 10
 
 [node name="price" type="Label" parent="content/price_container"]
 layout_mode = 2
-text = "18000 €"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0€"
 
 [connection signal="text_changed" from="content/input_container/LineEdit" to="." method="_on_line_edit_text_changed"]
 [connection signal="text_submitted" from="content/input_container/LineEdit" to="." method="_on_line_edit_text_submitted"]

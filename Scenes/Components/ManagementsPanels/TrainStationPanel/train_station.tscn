@@ -103,16 +103,19 @@ size_flags_vertical = 3
 layout_mode = 2
 metadata/FieldTitle = "Bois"
 metadata/type = "wood"
+metadata/Prefix = "-"
 
 [node name="TextFieldHop" parent="PanelContainer/VBoxContainer/Content/ChoixFlux/Importation/ImprtQuantite" instance=ExtResource("5_4nu88")]
 layout_mode = 2
 metadata/FieldTitle = "Houblon"
 metadata/type = "hop"
+metadata/Prefix = "-"
 
 [node name="TextFieldIce" parent="PanelContainer/VBoxContainer/Content/ChoixFlux/Importation/ImprtQuantite" instance=ExtResource("5_4nu88")]
 layout_mode = 2
 metadata/FieldTitle = "Glace"
 metadata/type = "ice"
+metadata/Prefix = "-"
 
 [node name="Exportation" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Content/ChoixFlux"]
 layout_mode = 2
@@ -136,21 +139,25 @@ size_flags_vertical = 3
 layout_mode = 2
 metadata/FieldTitle = "Bois"
 metadata/type = "wood"
+metadata/Prefix = "+"
 
 [node name="TextFieldHop" parent="PanelContainer/VBoxContainer/Content/ChoixFlux/Exportation/ExprtQuantite" instance=ExtResource("5_4nu88")]
 layout_mode = 2
 metadata/FieldTitle = "Houblon"
 metadata/type = "hop"
+metadata/Prefix = "+"
 
 [node name="TextFieldIce" parent="PanelContainer/VBoxContainer/Content/ChoixFlux/Exportation/ExprtQuantite" instance=ExtResource("5_4nu88")]
 layout_mode = 2
 metadata/FieldTitle = "Glace"
 metadata/type = "ice"
+metadata/Prefix = "+"
 
 [node name="TextFieldBeer" parent="PanelContainer/VBoxContainer/Content/ChoixFlux/Exportation/ExprtQuantite" instance=ExtResource("5_4nu88")]
 layout_mode = 2
 metadata/FieldTitle = "Bière"
 metadata/type = "beer"
+metadata/Prefix = "+"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Header/ClosingCross" to="." method="_on_close_button_pressed"]
 [connection signal="level_unlocked" from="PanelContainer/VBoxContainer/Content/Ameliorations/LevelsInitiator" to="." method="_on_levels_initiator_level_unlocked"]
