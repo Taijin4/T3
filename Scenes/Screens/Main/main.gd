@@ -5,6 +5,7 @@ extends Node2D
 @onready var materials_cost = {"wood" : 40, "hop" : 80, "ice" : 20, "other" : 500, "beer" : 200}
 @onready var warning = 0
 @onready var round_nbr = 1
+@onready var list_warning = []
 
 # Panels to show to user several values
 @onready var importation=$UI/Stats/GroupStats/Importation
@@ -113,6 +114,8 @@ func do_need():
 	var export = (train_st.get_exportation()).duplicate(true)
 	var coef_present_members=(members*100/member_money.get_job_value())
 	var coef_production=coef_present_members if coef_present_members < 100 else 100
+	if coef_production < 100 :
+		list_warning.append("Tu ne produit pas à ton max car il manque des employés dans ton quartier !!")
 	#Add all ressources aviable
 	for val in ressources:
 		storage[val] += ressources[val] if ressources[val] != -1 else 0
@@ -145,8 +148,8 @@ func do_need():
 			storage["beer"] = 0
 			subsist_need=false
 	if !subsist_need :
-		print("Tu ne peux pas subvenir aux besoin de ta population ! Tu gagne 1 warning.")
-		warning+=1 #Impossible de sibvenir aux besoins de la population
+		list_warning.append("Ton quartier n'arrive pas à subvenir à ses besoins !!")
+		warning+=1
 		members = members/2 if members/2 > 10 else members-10 if members-10 > 0 else 0
 	for val in export:
 		export[val] = export[val] if export[val] < storage[val] else storage[val]
@@ -154,20 +157,16 @@ func do_need():
 	for val in export :
 		storage[val] -= export[val] if export[val] != -1 else 0
 		if storage[val] > 100 :
-			print("Tu gaspille des ",val," ! Tu gagne 1 warning.")
-			warning+=1 #Reste de matières dans le stock
+			list_warning.append("Tu gaspille des "+str(val)+" ! Gère mieux ta production ou ton importation !!")
+			warning+=1
 
 func detect_loose_win():
 	if warning >= 3 :
-		#LOOSE
-		print("IL A PERDU")
-		print("Tu as " + str(warning) + " warnings.")
 		var pro = get_all_production()
 		disable_events()
 		$UI/EndScreen.init(false, self.money, self.members, pro["beer"],pro["ice"],pro["wood"],pro["hop"])
 		$UI/EndScreen.show()
 	if round_nbr == 10 :
-		print("IL A GANGÉ")
 		var pro = get_all_production()
 		disable_events()
 		$UI/EndScreen.init(true, self.money, self.members, pro["beer"],pro["ice"],pro["wood"],pro["hop"])
@@ -179,8 +178,8 @@ func manage_warning():
 	if round_nbr%2 == 0 :
 		warning-=1 if warning > 0 else 0
 	if money < 0 :
-		warning+=1 + (-money/20000) #Compte dans le négatif
-		print("Argent en négatif. Tu gagnes " + str(1 + (-money/20000)) + " warnings")
+		warning+=1 + (-money/35000)
+		list_warning.append("Tu es dans le négatif ! Ressaisis-toi !!")
 
 func update_panels_values():
 	var nee = get_all_need()
@@ -215,3 +214,4 @@ func __on_next_round():
 	manage_warning()
 	detect_loose_win()
 	print("Round ",round_nbr)
+	list_warning.clear()
