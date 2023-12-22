@@ -8,6 +8,9 @@ var turn = 0
 var column_id : int
 
 func init(data, column_id, unlock_first_level = true):
+	var children = get_children()
+	for child in children:
+		remove_child(child)
 	for level_data in data:
 		var level_scene = level_scene_path.instantiate()
 		level_scene.init(level_data)

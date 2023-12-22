@@ -7,10 +7,10 @@ var jsoncontroller = JsonController.new()
 @onready var production = {"humans" : 0}
 
 func _ready():
-	$PanelContainer/VBoxContainer/Content/Ameliorations/LevelsInitiator.init("ResidentielPanel")
 	init()
 
 func init():
+	$PanelContainer/VBoxContainer/Content/Ameliorations/LevelsInitiator.init("ResidentielPanel")
 	var tab : Array = jsoncontroller.load_from_file('res://Scenes/Components/ManagementsPanels/ResidentielPanel/levels.json')
 	for val in tab[0][0].get("addition"):
 		if val.get("type") == "production" :

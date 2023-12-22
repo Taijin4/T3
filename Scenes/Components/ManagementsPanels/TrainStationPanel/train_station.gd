@@ -11,10 +11,10 @@ var jsoncontroller = JsonController.new()
 
 
 func _ready():
-	$PanelContainer/VBoxContainer/Content/Ameliorations/LevelsInitiator.init("TrainStationPanel", false)
 	init()
 
 func init():
+	$PanelContainer/VBoxContainer/Content/Ameliorations/LevelsInitiator.init("TrainStationPanel", false)
 	need = {"humans" : 0, "other" : 0}
 	production = {"humans" : 50}
 	importation = {"hop" : 0, "ice" : 0, "wood" : 0, "beer" : -1, "other" : 0}
