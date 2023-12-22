@@ -12,7 +12,7 @@
 				},
 				{
 					"name" : "other",
-					"value" : 5,
+					"value" : 100,
 					"sentence" : "",
 					"type" : "need"
 				},
@@ -54,7 +54,7 @@
 				},
 				{
 					"name" : "other",
-					"value" : 20,
+					"value" : 350,
 					"sentence" : "",
 					"type" : "need"
 				},
@@ -96,7 +96,7 @@
 				},
 				{
 					"name" : "other",
-					"value" : 50,
+					"value" : 600,
 					"sentence" : "",
 					"type" : "need"
 				},
@@ -138,7 +138,7 @@
 				},
 				{
 					"name" : "other",
-					"value" : 65,
+					"value" : 850,
 					"sentence" : "",
 					"type" : "need"
 				},
