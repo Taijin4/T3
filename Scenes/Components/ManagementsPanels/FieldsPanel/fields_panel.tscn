@@ -50,6 +50,24 @@ theme_override_font_sizes/font_size = 50
 text = "CHAMPS
 "
 
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/Header"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="StopProd" type="Button" parent="PanelContainer/VBoxContainer/Header/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Stopper la production"
+
+[node name="StartProd" type="Button" parent="PanelContainer/VBoxContainer/Header/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Démarrer la production"
+
 [node name="ClosingCross" parent="PanelContainer/VBoxContainer/Header" instance=ExtResource("2_8fdd4")]
 layout_mode = 2
 size_flags_horizontal = 10
@@ -77,5 +95,7 @@ horizontal_alignment = 1
 [node name="LevelsInitiator" parent="PanelContainer/VBoxContainer/Content/Ameliorations" instance=ExtResource("4_gbtw5")]
 layout_mode = 2
 
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Header/MarginContainer/StopProd" to="." method="_on_stop_prod_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Header/MarginContainer/StartProd" to="." method="_on_start_prod_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Header/ClosingCross" to="." method="_on_closing_cross_pressed"]
 [connection signal="level_unlocked" from="PanelContainer/VBoxContainer/Content/Ameliorations/LevelsInitiator" to="." method="_on_levels_initiator_level_unlocked"]
