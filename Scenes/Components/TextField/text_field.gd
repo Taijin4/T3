@@ -7,9 +7,11 @@ var allowed_chars = RegEx.new()
 func _ready():
 	$content/title_container/title.text = get_meta("FieldTitle")
 	allowed_chars.compile("[^0-9]")
+	reset()
+
+func reset():
 	$content/input_container/LineEdit.text = "0"
 	set_price(0, get_meta("Prefix"))
-
 
 func set_price(new_price : int, prefix : String):
 	$content/price_container/price.text = prefix + " " + str(new_price) + "€"
