@@ -124,7 +124,6 @@ func do_need():
 		for val in available :
 			available[val] -= ressources_not_aviable[val]
 		var missing_beer = brewery.get_production("beer") - min(available["wood"]/2,min(available["ice"]*2,available["hop"]*2))
-		print(missing_beer)
 		storage["beer"] -= missing_beer
 		storage["wood"] += missing_beer*2
 		storage["ice"] += missing_beer*0.5

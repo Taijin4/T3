@@ -67,18 +67,15 @@ func set_exportation(value, type : String = ""):
 
 func _on_i_text_field_new_text_submitted(type, text):
 	importation[type] = int(text)
-	print(importation)
 
 func _on_e_text_field_new_text_submitted(type, text):
 	exportation[type] = int(text)
-	print(exportation)
 
 
 func _on_levels_initiator_level_unlocked(column, level_data):
 	for addition in level_data["addition"]:
 		if addition.has("type"):
 			if addition["type"] == "need":
-				print(addition["name"])
 				need[addition["name"]] += addition["value"]
 			elif addition["type"] == "production":
 				production[addition["name"]] += addition["value"]
