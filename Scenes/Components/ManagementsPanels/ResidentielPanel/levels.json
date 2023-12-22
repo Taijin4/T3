@@ -6,7 +6,7 @@
 			"addition": [
 				{
 					"name" : "humans",
-					"value" : 45,
+					"value" : 40,
 					"sentence" : "{value} habitations pour travailleurs",
 					"type" : "production"
 				},
