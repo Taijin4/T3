@@ -5,6 +5,9 @@ var levels_group_path = preload('res://Scenes/Components/VLevelsGroup/v_levels_g
 var jsoncontroller = JsonController.new()
 
 func init(panel_name : String, unlock_first_level = true):
+	var children = get_children()
+	for child in children:
+		remove_child(child)
 	var data : Array = jsoncontroller.load_from_file('res://Scenes/Components/ManagementsPanels/' + panel_name + '/levels.json')
 	var id= 0;
 	for column_data in data:

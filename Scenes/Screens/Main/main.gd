@@ -179,6 +179,7 @@ func manage_warning():
 		warning-=1 if warning > 0 else 0
 	if money < 0 :
 		warning+=1 + (-money/35000)
+		print("JE PASSE")
 		list_warning.append("Tu es dans le négatif ! Ressaisis-toi !!")
 
 func update_panels_values():
@@ -206,12 +207,21 @@ func reset_default_values():
 	enable_events()
 	$UI/EndScreen.hide()
 
-func __on_next_round():
-	round_nbr+=1
+func open_mid_screen():
 	do_import_members()
 	do_need()
-	update_panels_values()
 	manage_warning()
+	print(list_warning)
+	disable_events()
+	$UI/MidScreen.init(list_warning)
+	$UI/MidScreen.show()
+
+func __on_next_round():
+	$UI/MidScreen.hide()
+	enable_events()
+	round_nbr+=1
+	update_panels_values()
 	detect_loose_win()
 	print("Round ",round_nbr)
 	list_warning.clear()
+	

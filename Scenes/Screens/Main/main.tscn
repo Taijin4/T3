@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b2nitawiqkqd6"]
+[gd_scene load_steps=14 format=3 uid="uid://b2nitawiqkqd6"]
 
 [ext_resource type="PackedScene" uid="uid://bbgyirclom8br" path="res://Scenes/Components/StatsPanel/statspanel.tscn" id="1_cdmrd"]
 [ext_resource type="Script" path="res://Scenes/Screens/Main/main.gd" id="1_nvhvc"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b52qgcvlkrumu" path="res://Scenes/Components/ManagementsPanels/IceFactoryPanel/icefactory_panel.tscn" id="10_3wpe0"]
 [ext_resource type="PackedScene" uid="uid://disdjgvvwwv04" path="res://Scenes/Components/ManagementsPanels/FieldsPanel/fields_panel.tscn" id="11_piyi4"]
 [ext_resource type="PackedScene" uid="uid://4bpuy77tb4ve" path="res://Scenes/Screens/EndScreen/end_screen.tscn" id="12_5vkgs"]
+[ext_resource type="PackedScene" uid="uid://t2md0xw8j1np" path="res://Scenes/Screens/MidScreen/mid_screen.tscn" id="13_8f23g"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_nvhvc")
@@ -159,6 +160,9 @@ visible = false
 offset_top = 8.0
 offset_bottom = 8.0
 
+[node name="MidScreen" parent="UI" instance=ExtResource("13_8f23g")]
+visible = false
+
 [connection signal="panel_was_opened" from="DetectionAreas/Residential" to="." method="_on_panel_opened"]
 [connection signal="panel_was_opened" from="DetectionAreas/TrainStation" to="." method="_on_panel_opened"]
 [connection signal="panel_was_opened" from="DetectionAreas/Sawmill" to="." method="_on_panel_opened"]
@@ -177,8 +181,9 @@ offset_bottom = 8.0
 [connection signal="hide_panel" from="UI/Panels/IceFactoryPanel" to="." method="_on_panel_closed"]
 [connection signal="change_money" from="UI/Panels/FieldsPanel" to="." method="increase_money"]
 [connection signal="hide_panel" from="UI/Panels/FieldsPanel" to="." method="_on_panel_closed"]
-[connection signal="pressed" from="UI/NextRound/Button" to="." method="__on_next_round"]
+[connection signal="pressed" from="UI/NextRound/Button" to="." method="open_mid_screen"]
 [connection signal="_on_restart_game" from="UI/EndScreen" to="." method="reset_default_values"]
+[connection signal="next_round" from="UI/MidScreen" to="." method="__on_next_round"]
 
 [editable path="DetectionAreas/Residential"]
 [editable path="DetectionAreas/TrainStation"]
