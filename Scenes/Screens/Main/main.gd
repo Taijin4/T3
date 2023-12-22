@@ -25,22 +25,28 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	update_panels_values()
-
-func _on_panel_closed():
-	for child in $UI/Panels.get_children():
-		if child is Control:
-			child.hide()
-	for area in $DetectionAreas.get_children():
-		area.enable()
-	$Map.enable()
-	$UI/NextRound.show()
-	update_panels_values()
-
-func _on_panel_opened():
+	
+func disable_events():
 	for area in $DetectionAreas.get_children():
 		area.disable()
 	$Map.disable()
 	$UI/NextRound.hide()
+
+func enable_events():
+	for area in $DetectionAreas.get_children():
+		area.enable()
+	$Map.enable()
+	$UI/NextRound.show()
+	
+func _on_panel_closed():
+	for child in $UI/Panels.get_children():
+		if child is Control:
+			child.hide()
+	enable_events()
+	update_panels_values()
+
+func _on_panel_opened():
+	disable_events()
 
 func get_all_need():
 	var all = {"wood" : 0, "ice" : 0, "hop" : 0, "beer" : 0, "other" : 0, "humans" : 0}
@@ -148,11 +154,13 @@ func detect_loose_win():
 		#LOOSE
 		print("IL A PERDU")
 		var pro = get_all_production()
+		disable_events()
 		$UI/EndScreen.init(false, self.money, self.members, pro["beer"],pro["ice"],pro["wood"],pro["hop"])
 		$UI/EndScreen.show()
 	if round == 10 :
 		print("IL A GANGÉ")
 		var pro = get_all_production()
+		disable_events()
 		$UI/EndScreen.init(true, self.money, self.members, pro["beer"],pro["ice"],pro["wood"],pro["hop"])
 		$UI/EndScreen.show()
 	
