@@ -8,7 +8,8 @@ var jsoncontroller = JsonController.new()
 @onready var importation = {"hop" : 0, "ice" : 0, "wood" : 0, "beer" : -1, "other" : 0}
 @onready var exportation = {"hop" : 0, "ice" : 0, "wood" : 0, "beer" : 0, "other" : -1}
 
-
+var max_import
+var max_export
 
 func _ready():
 	init()
@@ -19,6 +20,9 @@ func init():
 	production = {"humans" : 50}
 	importation = {"hop" : 0, "ice" : 0, "wood" : 0, "beer" : -1, "other" : 0}
 	exportation = {"hop" : 0, "ice" : 0, "wood" : 0, "beer" : 0, "other" : -1}
+	max_import = 0
+	max_export = 0
+
 
 func _on_close_button_pressed():
 	hide_panel.emit()
@@ -88,4 +92,9 @@ func _on_levels_initiator_level_unlocked(column, level_data):
 				need[addition["name"]] += addition["value"]
 			elif addition["type"] == "production":
 				production[addition["name"]] += addition["value"]
+		elif addition["name"] == "materials":
+			if column == 0:
+				max_export += addition["value"]
+			else:
+				max_import += addition["value"]
 	change_money.emit(-int(level_data["price"]))
