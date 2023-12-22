@@ -4,11 +4,17 @@ signal hide_panel
 signal change_money(sum : int)
 var jsoncontroller = JsonController.new()
 
-@onready var need = {"humans" : 10, "other" : 10, "hop" : 25, "ice" : 25, "wood" : 100}
-@onready var production = {"beer" : 50}
+@onready var need = {"humans" : 0, "other" : 0, "hop" : 0, "ice" : 0, "wood" : 0}
+@onready var production = {"beer" : 0}
 
 func _ready():
 	$PanelContainer/VBoxContainer/Content/Ameliorations/LevelsInitiator.init("BreweryPanel")
+	var tab : Array = jsoncontroller.load_from_file('res://Scenes/Components/ManagementsPanels/BreweryPanel/levels.json')
+	for val in tab[0][0].get("addition"):
+		if val.get("type") == "production" :
+			production[val.get("name")] = val.get("value")
+		elif val.get("type") == "need" :
+			need[val.get("name")] = val.get("value")
 
 func _on_closing_cross_pressed():
 	hide_panel.emit()
@@ -40,13 +46,8 @@ func set_production(value, type : String = ""):
 
 func _on_levels_initiator_level_unlocked(column, level_data):
 	for addition in level_data["addition"]:
-		if addition["name"] != "other":
-			if addition["type"] == "need":
-				need[addition["name"]] += addition["value"]
-			elif addition["type"] == "production":
-				production[addition["name"]] += addition["value"]
-			else:
-				printerr("YA UN PROBLEME DANS LE JSON CHEF !")
-	
-	
+		if addition["type"] == "need":
+			need[addition["name"]] += addition["value"]
+		elif addition["type"] == "production":
+			production[addition["name"]] += addition["value"]
 	change_money.emit(-int(level_data["price"]))

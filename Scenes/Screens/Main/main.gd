@@ -1,8 +1,8 @@
 extends Node2D
 # main variable
-@onready var money = 10000
-@onready var members = 50
-@onready var materials_cost = {"wood" : 70, "hop" : 90, "ice" : 20, "other" : 50, "beer" : 110}
+@onready var money = 15000
+@onready var members = 45
+@onready var materials_cost = {"wood" : 40, "hop" : 80, "ice" : 20, "other" : 1000, "beer" : 200}
 @onready var warning = 0
 @onready var round = 1
 
@@ -22,7 +22,6 @@ extends Node2D
 @onready var field=$UI/Panels/FieldsPanel
 @onready var all_panels = [train_st,resident,sawmill,brewery,ice_fact,field]
 
-	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	update_panels_values()
@@ -69,11 +68,11 @@ func get_all_production():
 
 func increase_money(value : int):
 	self.money+=value
-	member_money.set_money(money+value)
+	member_money.set_money(money)
 
 func decrease_money(value : int):
 	self.money-=value
-	member_money.set_money(money-value)
+	member_money.set_money(money)
 
 func do_export_import(possible_exportation : Dictionary):
 	var import = train_st.get_importation()
@@ -104,18 +103,37 @@ func do_need():
 	#Add all ressources aviable
 	for val in ressources:
 		storage[val] += ressources[val] if ressources[val] != -1 else 0
+	var coef_present_members=(members*100/member_money.get_job_value())
 	for val in storage:
-		storage[val] += prod[val] if prod[val] != -1 else 0
-	
-	var subsist_need = true
+		storage[val] += ((prod[val]*coef_present_members)/100) if prod[val] != -1 else 0
 	#Remove ressources needed or export
+	var subsist_need = true
+	var ressources_not_aviable = {"wood" : 0, "ice" : 0, "hop" : 0, "beer" : 0}
+	var problem = false
+	
 	for val in storage:
 		storage[val] -= need[val] if need[val] != -1 else 0
 		if storage[val] < 0 :
-			storage[val] = 0
+			ressources_not_aviable[val] += -storage[val]
+			problem = true
+			subsist_need=false
+	if problem :
+		var available = (brewery.get_need()).duplicate(true)
+		available.erase("humans")
+		available.erase("other")
+		for val in available :
+			available[val] -= ressources_not_aviable[val]
+		var missing_beer = brewery.get_production("beer") - min(available["wood"]/2,min(available["ice"]*2,available["hop"]*2))
+		storage["beer"] -= missing_beer
+		storage["wood"] += missing_beer*2
+		storage["ice"] += missing_beer*0.5
+		storage["hop"] += missing_beer*0.5
+		if storage["beer"] < 0 :
+			storage["beer"] = 0
 			subsist_need=false
 	if !subsist_need :
-		warning+=1
+		warning+=1 #Impossible de sibvenir aux besoins de la population
+		members = members/2 if members/2 < 10 else members-10
 	for val in exp:
 		exp[val] = exp[val] if exp[val] < storage[val] else storage[val]
 	do_export_import(exp)
@@ -123,7 +141,7 @@ func do_need():
 	for val in exp :
 		storage[val] -= exp[val] if exp[val] != -1 else 0
 		if storage[val] > 20 :
-			warning+=1
+			warning+=1 #Reste de matières dans le stock
 
 func detect_loose_win():
 	if warning >= 3 :
@@ -136,27 +154,26 @@ func manage_warning():
 	if round%2 == 0 :
 		warning-=1 if warning > 0 else 0
 	if money < 0 :
-		warning+=1 + (-money/20000)
+		warning+=1 + (-money/20000) #Compte dans le négatif
 
 func update_panels_values():
-	var imp = train_st.get_importation()
-	importation.init("IMPORTATION",imp["wood"],imp["ice"],imp["hop"],imp["beer"],imp["other"])
-	var exp = train_st.get_exportation()
-	exportation.init("EXPORTATION",exp["wood"],exp["ice"],exp["hop"],exp["beer"],exp["other"])
 	var nee = get_all_need()
 	local_need.init("BESOINS",nee["wood"],nee["ice"],nee["hop"],nee["beer"],nee["other"])
 	var pro = get_all_production()
 	local_production.init("PRODUCTION",pro["wood"],pro["ice"],pro["hop"],pro["beer"],-1)
+	train_st.set_importation(nee["other"],"other")
+	var imp = train_st.get_importation()
+	importation.init("IMPORTATION",imp["wood"],imp["ice"],imp["hop"],imp["beer"],imp["other"])
+	var exp = train_st.get_exportation()
+	exportation.init("EXPORTATION",exp["wood"],exp["ice"],exp["hop"],exp["beer"],exp["other"])
+
 	member_money.init(money,resident.get_production("humans"),members, nee["humans"])
 
 func __on_next_round():
 	round+=1
-	decrease_money(500)
 	do_need()
 	do_import_members()
 	update_panels_values()
 	manage_warning()
 	detect_loose_win()
 	print("Round ",round)
-	
-	

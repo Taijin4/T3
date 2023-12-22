@@ -24,7 +24,19 @@ func s_with_space(number : int)-> String :
 			string = string.insert(position-3," ")
 			position-=3
 	return string
-		
+
+func get_member_max_value(in_string : bool=false):
+	if(in_string):
+		return self.member_max_value.text
+	else:
+		return  int(self.member_max_value.text)
+
+func get_job_value(in_string : bool=false):
+	if(in_string):
+		return self.job_value.text
+	else:
+		return  int(self.job_value.text)
+
 func set_member_value(number : int):
 	self.member_value.text = s_with_space(number)
 	
