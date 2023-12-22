@@ -1,6 +1,7 @@
 extends Control
 
 #var is_game_won = false
+signal _on_restart_game
 
 @onready var victory_label = $PanelContainer/Container/VBoxContainer/Sentences/VictoryLabel
 @onready var sentence_label = $PanelContainer/Container/VBoxContainer/Sentences/SentenceLabel
@@ -70,3 +71,7 @@ func init(is_game_won, money = -1, humans = -1, beer = -1, ice = -1, wood = -1, 
 	wood_label.text = str(wood)
 	wood_label.add_theme_font_size_override("font_size", 50)
 	replay_button_margin.add_theme_constant_override("margin_left", 250)
+
+
+func _on_reset_button_pressed():
+	_on_restart_game.emit()

@@ -178,6 +178,7 @@ offset_bottom = 8.0
 [connection signal="change_money" from="UI/Panels/FieldsPanel" to="." method="increase_money"]
 [connection signal="hide_panel" from="UI/Panels/FieldsPanel" to="." method="_on_panel_closed"]
 [connection signal="pressed" from="UI/NextRound/Button" to="." method="__on_next_round"]
+[connection signal="_on_restart_game" from="UI/EndScreen" to="." method="reset_default_values"]
 
 [editable path="DetectionAreas/Residential"]
 [editable path="DetectionAreas/TrainStation"]

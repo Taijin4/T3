@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bv7ajahhu3j37" path="res://Assets/Images/ice-cube.png" id="5_m3rqp"]
 [ext_resource type="Texture2D" uid="uid://cjjaasi1ndpxn" path="res://Assets/Images/houblon.png" id="6_vx26f"]
 [ext_resource type="Texture2D" uid="uid://cspnbbet7dg2j" path="res://Assets/Images/wood.png" id="7_wrek2"]
-[ext_resource type="Texture2D" uid="uid://10pigf6yf67j" path="res://Assets/Images/reset_arrow.png" id="8_jy2l2"]
+[ext_resource type="Texture2D" uid="uid://ihe8xon3aeui" path="res://Assets/Images/reset_arrow.png" id="8_5sn7k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7n1xv"]
 bg_color = Color(0, 0, 0, 0.329412)
@@ -150,7 +150,8 @@ layout_mode = 2
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/Container/VBoxContainer/MarginContainer/Columns/SecondColumn/WoodContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/Container/VBoxContainer/MarginContainer/Columns/SecondColumn/WoodContainer/MarginContainer"]
+[node name="ResetButton" type="TextureButton" parent="PanelContainer/Container/VBoxContainer/MarginContainer/Columns/SecondColumn/WoodContainer/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("8_jy2l2")
-expand_mode = 2
+texture_normal = ExtResource("8_5sn7k")
+
+[connection signal="pressed" from="PanelContainer/Container/VBoxContainer/MarginContainer/Columns/SecondColumn/WoodContainer/MarginContainer/ResetButton" to="." method="_on_reset_button_pressed"]
