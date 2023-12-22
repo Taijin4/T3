@@ -67,9 +67,11 @@ func set_exportation(value, type : String = ""):
 
 func _on_i_text_field_new_text_submitted(type, text):
 	importation[type] = int(text)
+	
 
 func _on_e_text_field_new_text_submitted(type, text):
 	exportation[type] = int(text)
+	
 
 
 func _on_levels_initiator_level_unlocked(column, level_data):
