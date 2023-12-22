@@ -21,6 +21,12 @@
 					"value" : 80,
 					"sentence" : "Besoin de {value} litres de bières pour les habitants",
 					"type" : "need"
+				},
+				{
+					"name" : "humans",
+					"value" : 5,
+					"sentence" : "Besoin de {value} personnels pour gérer le quartier",
+					"type" : "need"
 				}
 			]
 		},
@@ -44,6 +50,12 @@
 					"name" : "beer",
 					"value" : 280,
 					"sentence" : "Besoin de {value} litres supplémentaires de bières pour les habitants",
+					"type" : "need"
+				},
+				{
+					"name" : "humans",
+					"value" : 15,
+					"sentence" : "Besoin de {value} personnels pour gérer le quartier",
 					"type" : "need"
 				}
 			]
@@ -69,6 +81,12 @@
 					"value" : 440,
 					"sentence" : "Besoin de {value} litres supplémentaires de bières pour les habitants",
 					"type" : "need"
+				},
+				{
+					"name" : "humans",
+					"value" : 25,
+					"sentence" : "Besoin de {value} personnels pour gérer le quartier",
+					"type" : "need"
 				}
 			]
 		},
@@ -92,6 +110,12 @@
 					"name" : "beer",
 					"value" : 560,
 					"sentence" : "Besoin de {value} litres supplémentaires de bières pour les habitants",
+					"type" : "need"
+				},
+				{
+					"name" : "humans",
+					"value" : 30,
+					"sentence" : "Besoin de {value} personnels pour gérer le quartier",
 					"type" : "need"
 				}
 			]
