@@ -11,19 +11,20 @@ func init(level_data):
 	var addition = level_data["addition"]
 	if typeof(addition) == TYPE_ARRAY:
 		for add in addition:
-			var sentence = add["sentence"].replace("{value}", str(add["value"]))
-			
-			var l1 := Label.new()
-			l1.text = sentence
-			l1.add_theme_font_size_override("font_size", 18)
-			l1.autowrap_mode = TextServer.AUTOWRAP_ARBITRARY
-			$Button/Margin/Locked/LockedAddition.add_child(l1)
-			
-			var l2 := Label.new()
-			l2.text = sentence
-			l2.add_theme_font_size_override("font_size", 18)
-			l2.autowrap_mode = TextServer.AUTOWRAP_ARBITRARY
-			$Button/Margin/Unlocked/UnlockedAddition.add_child(l2)
+			if add["name"] != "other":
+				var sentence = add["sentence"].replace("{value}", str(add["value"]))
+				
+				var l1 := Label.new()
+				l1.text = sentence
+				l1.add_theme_font_size_override("font_size", 18)
+				l1.autowrap_mode = TextServer.AUTOWRAP_ARBITRARY
+				$Button/Margin/Locked/LockedSC/LockedAddition.add_child(l1)
+				
+				var l2 := Label.new()
+				l2.text = sentence
+				l2.add_theme_font_size_override("font_size", 18)
+				l2.autowrap_mode = TextServer.AUTOWRAP_ARBITRARY
+				$Button/Margin/Unlocked/UnlockedSC/UnlockedAddition.add_child(l2)
 	
 	# locked
 	find_child('LockedPrice').text = "----- " + str(level_data["price"]) + "€ ----- "

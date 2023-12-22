@@ -35,25 +35,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
 
 [node name="Locked" type="VBoxContainer" parent="Button/Margin"]
 layout_mode = 2
-alignment = 1
 
 [node name="LockedPrice" type="Label" parent="Button/Margin/Locked"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
+size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 25
 text = "DEFAULT PRICE"
+horizontal_alignment = 1
 
-[node name="LockedAddition" type="VBoxContainer" parent="Button/Margin/Locked"]
+[node name="LockedSC" type="ScrollContainer" parent="Button/Margin/Locked"]
 layout_mode = 2
-size_flags_vertical = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="LockedAddition" type="VBoxContainer" parent="Button/Margin/Locked/LockedSC"]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Unlocked" type="VBoxContainer" parent="Button/Margin"]
 visible = false
@@ -61,13 +63,19 @@ layout_mode = 2
 
 [node name="UnlockedLevel" type="Label" parent="Button/Margin/Unlocked"]
 layout_mode = 2
+size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 25
 text = "NIVEAU DEFAULT"
 horizontal_alignment = 1
 
-[node name="UnlockedAddition" type="VBoxContainer" parent="Button/Margin/Unlocked"]
+[node name="UnlockedSC" type="ScrollContainer" parent="Button/Margin/Unlocked"]
 layout_mode = 2
-size_flags_vertical = 4
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="UnlockedAddition" type="VBoxContainer" parent="Button/Margin/Unlocked/UnlockedSC"]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
