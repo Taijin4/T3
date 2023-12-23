@@ -20,7 +20,6 @@ Votre but est de reterritorialiser ce quartier au mieux, de la façon dont vous 
 
 ## Instructions d'installation
 1. Se rendre sur le site de [Brassopolis](http://klebert-host.com:50007/)
-1. Télécharger le bon fichier pour votre système
-1. Lancer le .exe
-1. Suivre les insctructions d'installations
+1. Télécharger le bon dossier zip pour votre système
+1. Lancer le .exe sur Windows et le .x86_64 sur linux
 1. Profiter du jeu
